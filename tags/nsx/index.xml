@@ -2,101 +2,101 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>NSX on UltTransformer</title>
-    <link>https://github.com/UltTransformer/ulttransformer.github.io/tags/nsx/</link>
+    <link>https://ulttransformer.github.io/tags/nsx/</link>
     <description>Recent content in NSX on UltTransformer</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 06 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://github.com/UltTransformer/ulttransformer.github.io/tags/nsx/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 06 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://ulttransformer.github.io/tags/nsx/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>NSX ALB (Advanced Load Balancer) Design</title>
-      <link>https://github.com/UltTransformer/ulttransformer.github.io/posts/avi-networks-alb/nsx-alb-advanced-load-balancer-design/</link>
+      <link>https://ulttransformer.github.io/posts/avi-networks-alb/nsx-alb-advanced-load-balancer-design/</link>
       <pubDate>Mon, 06 Dec 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://github.com/UltTransformer/ulttransformer.github.io/posts/avi-networks-alb/nsx-alb-advanced-load-balancer-design/</guid>
+      <guid>https://ulttransformer.github.io/posts/avi-networks-alb/nsx-alb-advanced-load-balancer-design/</guid>
       <description>I wrote three (3) blogs on Avi Load Balancing, now rebranded as VMware NSX ALB (Advanced Load Balancer). These were around the basic concepts, base configuration, and that configuration using API.
 https://vmusketeers.com/2020/05/09/avi-networks-the-advanced-nsx-load-balancer/ https://vmusketeers.com/2020/05/24/avi-networks-base-configuration/ https://vmusketeers.com/2020/06/19/avi-network-base-configuration-via-api/ I noticed it was difficult to find a single post that discusses the different types of design solutions. In this post, I want to discuss the design decisions when deploying an ALB solution and expand on my previous blogs.</description>
     </item>
     
     <item>
       <title>Complement your VDI environment with NSX</title>
-      <link>https://github.com/UltTransformer/ulttransformer.github.io/posts/complement-your-vdi-environment-with-nsx/complement-your-vdi-environment-with-nsx-advanced-load-balancer/</link>
+      <link>https://ulttransformer.github.io/posts/complement-your-vdi-environment-with-nsx/complement-your-vdi-environment-with-nsx-advanced-load-balancer/</link>
       <pubDate>Sun, 11 Apr 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://github.com/UltTransformer/ulttransformer.github.io/posts/complement-your-vdi-environment-with-nsx/complement-your-vdi-environment-with-nsx-advanced-load-balancer/</guid>
+      <guid>https://ulttransformer.github.io/posts/complement-your-vdi-environment-with-nsx/complement-your-vdi-environment-with-nsx-advanced-load-balancer/</guid>
       <description>Part 1: Complement your VDI environment with NSX. Part 2: Complement your VDI environment with NSX: dFW. Part 3: Complement your VDI environment with NSX: IDFW. Part 4: Complement your VDI environment with NSX: Introspection Services. Part 5: Complement your VDI environment with NSX: IDS/IPS. Part 6: Complement your VDI environment with NSX: Advanced Load Balancer Thanks to Siegfried Huijgen I ended up receiving a lot of attention on the 5 part series, which spun off into a request for a part 6 on Avi Networks Load Balancing.</description>
     </item>
     
     <item>
       <title>Complement your VDI environment with NSX</title>
-      <link>https://github.com/UltTransformer/ulttransformer.github.io/posts/complement-your-vdi-environment-with-nsx/complement-your-vdi-environment-with-nsx-ids-ips/</link>
+      <link>https://ulttransformer.github.io/posts/complement-your-vdi-environment-with-nsx/complement-your-vdi-environment-with-nsx-ids-ips/</link>
       <pubDate>Tue, 16 Mar 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://github.com/UltTransformer/ulttransformer.github.io/posts/complement-your-vdi-environment-with-nsx/complement-your-vdi-environment-with-nsx-ids-ips/</guid>
+      <guid>https://ulttransformer.github.io/posts/complement-your-vdi-environment-with-nsx/complement-your-vdi-environment-with-nsx-ids-ips/</guid>
       <description>Part 1: Complement your VDI environment with NSX. Part 2: Complement your VDI environment with NSX: dFW. Part 3: Complement your VDI environment with NSX: IDFW. Part 4: Complement your VDI environment with NSX: Introspection Services. Part 5: Complement your VDI environment with NSX: IDS/IPS. Part 6: Complement your VDI environment with NSX: Advanced Load Balancer The final post of this series will be around NSX IDS (Intrusion Detection System) and IPS (Intrusion Prevention System).</description>
     </item>
     
     <item>
       <title>Complement your VDI environment with NSX</title>
-      <link>https://github.com/UltTransformer/ulttransformer.github.io/posts/complement-your-vdi-environment-with-nsx/complement-your-vdi-environment-with-nsx-introspection-services/</link>
+      <link>https://ulttransformer.github.io/posts/complement-your-vdi-environment-with-nsx/complement-your-vdi-environment-with-nsx-introspection-services/</link>
       <pubDate>Sun, 28 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://github.com/UltTransformer/ulttransformer.github.io/posts/complement-your-vdi-environment-with-nsx/complement-your-vdi-environment-with-nsx-introspection-services/</guid>
+      <guid>https://ulttransformer.github.io/posts/complement-your-vdi-environment-with-nsx/complement-your-vdi-environment-with-nsx-introspection-services/</guid>
       <description>Part 1: Complement your VDI environment with NSX. Part 2: Complement your VDI environment with NSX: dFW. Part 3: Complement your VDI environment with NSX: IDFW. Part 4: Complement your VDI environment with NSX: Introspection Services. Part 5: Complement your VDI environment with NSX: IDS/IPS. Part 6: Complement your VDI environment with NSX: Advanced Load Balancer Unfortunately, this post will be more of a theoretical one. I don’t have access to any introspection service providers.</description>
     </item>
     
     <item>
       <title>Complement your VDI environment with NSX</title>
-      <link>https://github.com/UltTransformer/ulttransformer.github.io/posts/complement-your-vdi-environment-with-nsx/complement-your-vdi-environment-with-nsx-idfw/</link>
+      <link>https://ulttransformer.github.io/posts/complement-your-vdi-environment-with-nsx/complement-your-vdi-environment-with-nsx-idfw/</link>
       <pubDate>Fri, 29 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://github.com/UltTransformer/ulttransformer.github.io/posts/complement-your-vdi-environment-with-nsx/complement-your-vdi-environment-with-nsx-idfw/</guid>
+      <guid>https://ulttransformer.github.io/posts/complement-your-vdi-environment-with-nsx/complement-your-vdi-environment-with-nsx-idfw/</guid>
       <description>Part 1: Complement your VDI environment with NSX. Part 2: Complement your VDI environment with NSX: dFW. Part 3: Complement your VDI environment with NSX: IDFW. Part 4: Complement your VDI environment with NSX: Introspection Services. Part 5: Complement your VDI environment with NSX: IDS/IPS. Part 6: Complement your VDI environment with NSX: Advanced Load Balancer Before I start. Shout out to Bilal Ahmed, a fellow vMusketeer who helped me with this post.</description>
     </item>
     
     <item>
       <title>Complement your VDI environment with NSX</title>
-      <link>https://github.com/UltTransformer/ulttransformer.github.io/posts/complement-your-vdi-environment-with-nsx/complement-your-vdi-environment-with-nsx-dfw/</link>
+      <link>https://ulttransformer.github.io/posts/complement-your-vdi-environment-with-nsx/complement-your-vdi-environment-with-nsx-dfw/</link>
       <pubDate>Sun, 03 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://github.com/UltTransformer/ulttransformer.github.io/posts/complement-your-vdi-environment-with-nsx/complement-your-vdi-environment-with-nsx-dfw/</guid>
+      <guid>https://ulttransformer.github.io/posts/complement-your-vdi-environment-with-nsx/complement-your-vdi-environment-with-nsx-dfw/</guid>
       <description>Part 1: Complement your VDI environment with NSX. Part 2: Complement your VDI environment with NSX: dFW. Part 3: Complement your VDI environment with NSX: IDFW. Part 4: Complement your VDI environment with NSX: Introspection Services. Part 5: Complement your VDI environment with NSX: IDS/IPS. Part 6: Complement your VDI environment with NSX: Advanced Load Balancer I started the series discussing the different features within NSX that can complement a VDI environment.</description>
     </item>
     
     <item>
       <title>Complement your VDI environment with NSX</title>
-      <link>https://github.com/UltTransformer/ulttransformer.github.io/posts/complement-your-vdi-environment-with-nsx/complement-your-vdi-environment-with-nsx/</link>
+      <link>https://ulttransformer.github.io/posts/complement-your-vdi-environment-with-nsx/complement-your-vdi-environment-with-nsx/</link>
       <pubDate>Thu, 26 Nov 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://github.com/UltTransformer/ulttransformer.github.io/posts/complement-your-vdi-environment-with-nsx/complement-your-vdi-environment-with-nsx/</guid>
+      <guid>https://ulttransformer.github.io/posts/complement-your-vdi-environment-with-nsx/complement-your-vdi-environment-with-nsx/</guid>
       <description>Part 1: Complement your VDI environment with NSX. Part 2: Complement your VDI environment with NSX: dFW. Part 3: Complement your VDI environment with NSX: IDFW. Part 4: Complement your VDI environment with NSX: Introspection Services. Part 5: Complement your VDI environment with NSX: IDS/IPS. Part 6: Complement your VDI environment with NSX: Advanced Load Balancer Over the past few weeks, I’ve been working with a number of customers that are keen to see how NSX can complement their existing or new VDI environment(s).</description>
     </item>
     
     <item>
       <title>NSX-T Automation using Terraform</title>
-      <link>https://github.com/UltTransformer/ulttransformer.github.io/posts/nsx-t-on-vmc/nsx-t-automation-using-terraform-the-how-vmc/</link>
+      <link>https://ulttransformer.github.io/posts/nsx-t-on-vmc/nsx-t-automation-using-terraform-the-how-vmc/</link>
       <pubDate>Mon, 10 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://github.com/UltTransformer/ulttransformer.github.io/posts/nsx-t-on-vmc/nsx-t-automation-using-terraform-the-how-vmc/</guid>
+      <guid>https://ulttransformer.github.io/posts/nsx-t-on-vmc/nsx-t-automation-using-terraform-the-how-vmc/</guid>
       <description>I started the series with a post about why I wanted to use Terraform. Now we have the why out of the way, let’s get to the fun stuff… the how!
 I use Terraform for 2 things. The first is to spin up SDDC’s on VMC and configure the VMC NSX-T piece. The second is spinning up NSX-T environments in the lab, which will hopefully make it into production one day.</description>
     </item>
     
     <item>
       <title>NSX-T Automation using Terraform</title>
-      <link>https://github.com/UltTransformer/ulttransformer.github.io/posts/nsx-t-on-vmc/nsx-t-automation-using-terraform-the-why/</link>
+      <link>https://ulttransformer.github.io/posts/nsx-t-on-vmc/nsx-t-automation-using-terraform-the-why/</link>
       <pubDate>Mon, 03 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://github.com/UltTransformer/ulttransformer.github.io/posts/nsx-t-on-vmc/nsx-t-automation-using-terraform-the-why/</guid>
+      <guid>https://ulttransformer.github.io/posts/nsx-t-on-vmc/nsx-t-automation-using-terraform-the-why/</guid>
       <description>Hi all, I hope you are all doing well during these trying times.
 For months, possibly even years, I’ve been convincing myself I’d dive into automation. What better time than one where I am forced into isolation with my laptop. In truth, I was jolted into action by a business requirement for automating the build of a number of environments. These environments had to be standardised and utilise many of the same configuration elements.</description>
     </item>
     
     <item>
       <title>Avi Networks | NSX ALB</title>
-      <link>https://github.com/UltTransformer/ulttransformer.github.io/posts/avi-networks-alb/avi-networks-base-configuration-via-api/</link>
+      <link>https://ulttransformer.github.io/posts/avi-networks-alb/avi-networks-base-configuration-via-api/</link>
       <pubDate>Fri, 19 Jun 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://github.com/UltTransformer/ulttransformer.github.io/posts/avi-networks-alb/avi-networks-base-configuration-via-api/</guid>
+      <guid>https://ulttransformer.github.io/posts/avi-networks-alb/avi-networks-base-configuration-via-api/</guid>
       <description>API ReferenceI wrote a post a few weeks back on how to get an Avi proof of concept up and running. Hopefully, it helped and continues to help others wanting to start playing with Avi.
 I like to spin my lab up and down, pushing config when needed. This post will be focused around the Avi APIs and how to stand up the basic configuration previously discussed.
 I used the Avi API guide for reference: https://avinetworks.</description>
@@ -104,20 +104,20 @@ I used the Avi API guide for reference: https://avinetworks.</description>
     
     <item>
       <title>Avi Networks | NSX ALB</title>
-      <link>https://github.com/UltTransformer/ulttransformer.github.io/posts/avi-networks-alb/avi-networks-base-configuration/</link>
+      <link>https://ulttransformer.github.io/posts/avi-networks-alb/avi-networks-base-configuration/</link>
       <pubDate>Sun, 24 May 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://github.com/UltTransformer/ulttransformer.github.io/posts/avi-networks-alb/avi-networks-base-configuration/</guid>
+      <guid>https://ulttransformer.github.io/posts/avi-networks-alb/avi-networks-base-configuration/</guid>
       <description>Load BalancingI covered Avi Networks at a high level in my first post. I now want to dive into the base configuration of Avi and at its core, it is a Load Balancer. Saying that there are a few flavours of Load Balancing.
 Layer 4 Load Balancing. – Focusing on the IP address and TCP port. Layer 7 Load Balancing. – Focusing on layer 7 attributes such as HTTP headers. Global Server Load Balancing.</description>
     </item>
     
     <item>
       <title>Avi Networks | NSX ALB</title>
-      <link>https://github.com/UltTransformer/ulttransformer.github.io/posts/avi-networks-alb/avi-networks-the-advanced-nsx-load-balancer/</link>
+      <link>https://ulttransformer.github.io/posts/avi-networks-alb/avi-networks-the-advanced-nsx-load-balancer/</link>
       <pubDate>Sat, 09 May 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://github.com/UltTransformer/ulttransformer.github.io/posts/avi-networks-alb/avi-networks-the-advanced-nsx-load-balancer/</guid>
+      <guid>https://ulttransformer.github.io/posts/avi-networks-alb/avi-networks-the-advanced-nsx-load-balancer/</guid>
       <description>What is Avi?Avi Networks provides software-defined Load Balancing at its core. Complementing the core service is a plethora of mouthwatering services and features. Surely the reason Avi was acquired by VMware on July 11th 2019. Rebranded as the NSX Advanced Load Balancer.
 Some of the features include application analytics, predictive autoscaling, micro-segmentation and WAF (Web Application Firewall) all this and on both cloud and on-prem. The Load Balancer for any platform!</description>
     </item>
