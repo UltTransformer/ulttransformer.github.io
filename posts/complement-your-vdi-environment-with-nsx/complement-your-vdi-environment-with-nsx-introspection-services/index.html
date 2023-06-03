@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  
+    
+  <title>Complement your VDI environment with NSX | UltTransformer</title>
+  <meta name="author" content="Puppet">
+  <meta name="description" content="Part 1: Complement your VDI environment with NSX. Part 2: Complement your VDI environment with NSX: dFW. Part 3: Complement your VDI environment with NSX: IDFW. Part 4: Complement your VDI environment with NSX: Introspection Services. Part 5: Complement your VDI environment with NSX: IDS/IPS. Part 6: Complement your VDI environment with NSX: Advanced Load Balancer Unfortunately, this post will be more of a theoretical one. I don’t have access to any introspection service providers.">
+  <meta name="keywords" content="blog,developer,personal">
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Complement your VDI environment with NSX"/>
+<meta name="twitter:description" content="Part 1: Complement your VDI environment with NSX. Part 2: Complement your VDI environment with NSX: dFW. Part 3: Complement your VDI environment with NSX: IDFW. Part 4: Complement your VDI environment with NSX: Introspection Services. Part 5: Complement your VDI environment with NSX: IDS/IPS. Part 6: Complement your VDI environment with NSX: Advanced Load Balancer Unfortunately, this post will be more of a theoretical one. I don’t have access to any introspection service providers."/>
+
+  <meta property="og:title" content="Complement your VDI environment with NSX" />
+<meta property="og:description" content="Part 1: Complement your VDI environment with NSX. Part 2: Complement your VDI environment with NSX: dFW. Part 3: Complement your VDI environment with NSX: IDFW. Part 4: Complement your VDI environment with NSX: Introspection Services. Part 5: Complement your VDI environment with NSX: IDS/IPS. Part 6: Complement your VDI environment with NSX: Advanced Load Balancer Unfortunately, this post will be more of a theoretical one. I don’t have access to any introspection service providers." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://github.com/UltTransformer/ulttransformer.github.io/posts/complement-your-vdi-environment-with-nsx/complement-your-vdi-environment-with-nsx-introspection-services/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-02-28T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-02-28T00:00:00+00:00" />
+
+  <link rel="stylesheet" href="/UltTransformer/ulttransformer.github.io/css/bootstrap.min.css"  crossorigin="anonymous">
+  
+  <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/all.min.css" rel="stylesheet" type="text/css">
+
+  <link rel="stylesheet" href="/UltTransformer/ulttransformer.github.io/sass/main.css">
+
+  <link rel="stylesheet" href="/UltTransformer/ulttransformer.github.io/zoomjs/zoom.min.css">
+
+  <script src=/UltTransformer/ulttransformer.github.io/js/lazysizes.min.js></script>
+
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="/UltTransformer/ulttransformer.github.io/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/UltTransformer/ulttransformer.github.io/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/UltTransformer/ulttransformer.github.io/favicon-16x16.png">
+  <link rel="manifest" href="/UltTransformer/ulttransformer.github.io/site.webmanifest">
+  
+
+</head>
+
+
+
+<body ontouchstart="">
+  <nav class="navbar navbar-default navbar-custom navbar-fixed-top ">
+  <div class="container-fluid">
+    
+    <div class="navbar-header page-scroll">
+      <button type="button" class="navbar-toggle">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://github.com/UltTransformer/ulttransformer.github.io">UltTransformer</a>
+    </div>
+    
+    <div id="huxblog_navbar">
+      <div class="navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          
+          <li><a href="/UltTransformer/ulttransformer.github.io/" title="Home">Home</a></li>
+          
+          <li><a href="/UltTransformer/ulttransformer.github.io/posts/" title="Posts">Posts</a></li>
+          
+          <li><a href="/UltTransformer/ulttransformer.github.io/about/" title="About">About</a></li>
+          
+
+          <li class="search-icon">
+            <a href="javascript:void(0)">
+              <i class="fa fa-search"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    
+  </div>
+  
+</nav>
+<script>
+  
+  
+  
+  var $body = document.body;
+  var $toggle = document.querySelector(".navbar-toggle");
+  var $navbar = document.querySelector("#huxblog_navbar");
+  var $collapse = document.querySelector(".navbar-collapse");
+
+  var __HuxNav__ = {
+    close: function () {
+      $navbar.className = " ";
+      
+      setTimeout(function () {
+        
+        if ($navbar.className.indexOf("in") < 0) {
+          $collapse.style.height = "0px";
+        }
+      }, 400);
+    },
+    open: function () {
+      $collapse.style.height = "auto";
+      $navbar.className += " in";
+    },
+  };
+
+  
+  $toggle.addEventListener("click", function (e) {
+    if ($navbar.className.indexOf("in") > 0) {
+      __HuxNav__.close();
+    } else {
+      __HuxNav__.open();
+    }
+  });
+
+  
+
+  document.addEventListener("click", function (e) {
+    if (e.target == $toggle) return;
+    if (e.target.className == "icon-bar") return;
+    __HuxNav__.close();
+  });
+</script>
+  
+<div class="search-page">
+  <div class="search-icon-close-container">
+    <span class="search-icon-close">
+      <i class="fa fa-chevron-down"></i>
+    </span>
+  </div>
+  <div class="search-main container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <form></form>
+        <input type="text" id="search-input" placeholder="$ grep...">
+        </form>
+        <div id="search-results" class="mini-post-list"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  
+  
+
+
+<style type="text/css">
+  header.intro-header {
+    position: relative;
+    background-image: url('/UltTransformer/ulttransformer.github.io/img/home-bg.jpg');
+  }
+</style>
+
+<header class="intro-header ">
+
+  <div class="header-mask"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="post-heading">
+          <div class="tags">
+            
+            <a class="tag" href="/UltTransformer/ulttransformer.github.io/tags/nsx/" title="NSX">NSX</a>
+            
+          </div>
+          <h1>Complement your VDI environment with NSX</h1>
+          <h2 class="subheading">Introspection Services</h2>
+          <span class="meta">
+            Posted by  Chris Noon 
+            on Sun, Feb 28, 2021
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+  
+
+
+<article>
+  <div class="container">
+    <div class="row">
+
+      
+      <div class="
+              col-lg-8 col-lg-offset-2
+              col-md-10 col-md-offset-1
+              post-container">
+        <ul>
+<li>Part 1: Complement your VDI environment with NSX.</li>
+<li>Part 2: Complement your VDI environment with NSX: dFW.</li>
+<li>Part 3: Complement your VDI environment with NSX: IDFW.</li>
+<li>Part 4: Complement your VDI environment with NSX: Introspection Services.</li>
+<li>Part 5: Complement your VDI environment with NSX: IDS/IPS.</li>
+<li>Part 6: Complement your VDI environment with NSX: Advanced Load Balancer</li>
+</ul>
+<p>Unfortunately, this post will be more of a theoretical one. I don’t have access to any introspection service providers. That said, I think it is something that should be discussed as it adds huge benefits.</p>
+<p>If any partner out there is reading this and wants to give me a trial of their product, I’m happy to write a Part 4.5 of this series.</p>
+<h3 id="introspection-services-concepts">Introspection Services Concepts.<a class="anchorjs-link" href="#introspection-services-concepts"></a></h3><p>Introspection services come in two (2) flavours. File and Network introspection services.</p>
+<p>File introspection services are focused on Anti-Virus and Malware detection/removal. This allows an Anti-Virus partner to install and configure a management appliance, similar to an NSX Manager. This appliance will then be linked to the vCenter and NSX Managers. It allows service VM’s to be pushed to each ESXi host requiring the consumption of this service. Allowing the service VM workloads to be distributed across the ESXi hosts, provides horizontal scaling and no single point of failure. An additional benefit is the Anti-Virus processing is now removed from the VM (VDI/RDSH) and moved onto a dedicated service VM. Allowing for better use of VDI/RDSH resources without compromising on protection.</p>
+<p>Network introspection services are similar to file introspection. The key difference is that instead of offloading Anti-Virus and Malware to a service VM, it offloads Layer 4-7 Network services. An example of this would be leveraging IDS/IPS services from an NSX partner. Wait a minute, or we could use NSX’s native IDS/IPS, which is the next blog in the series. There are many other use cases for Network introspection services. The key here is that these L4-L7 services are now run in a distributed manner which allows for horizontal scaling and no single point of failure, much like the File introspection.</p>
+<p>Both these services are set up and linked to the NSX Manager. However, consumption of them vary. File introspection is configured from the partner management Appliance, whereas the Network Introspection services are configured on both the NSX Manager and the partner management Appliance. When applying either File or Network Introspection services, double-check the installation and admin guides.</p>
+<p>Below is a diagram that shows how those Partner Managers and Service VM’s are plummed into NSX and vCenter/ESXi.</p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="https://docs.vmware.com/en/VMware-NSX-T-Data-Center/3.1/administration/images/GUID-AAFA4102-F0E9-4985-8C7D-870A01858E62-low.png" data-action="zoom" alt="Logical Diagram"  class="lazyload">
+  </a>
+  
+</figure></p>
+<p><a href="https://www.vmware.com/resources/compatibility/search.php?deviceCategory=nsxt&amp;details=1&amp;releases=538&amp;page=1&amp;display_interval=10&amp;sortColumn=Partner&amp;sortOrder=Asc" target="_blank">https://www.vmware.com/resources/compatibility/search.php?deviceCategory=nsxt&details=1&releases=538&page=1&display_interval=10&sortColumn=Partner&sortOrder=Asc</a></p>
+<h3 id="links-to-documentation">Links to Documentation.<a class="anchorjs-link" href="#links-to-documentation"></a></h3><p>There is great VMware documentation on Introspection Services and if you are interested in deploying Introspection Services, definitely check it out:</p>
+<p><a href="https://docs.vmware.com/en/VMware-NSX-T-Data-Center/3.1/administration/GUID-CDFE1F13-7D9A-4C3E-B567-C4A34A98AD8C.html" target="_blank">https://docs.vmware.com/en/VMware-NSX-T-Data-Center/3.1/administration/GUID-CDFE1F13-7D9A-4C3E-B567-C4A34A98AD8C.html</a></p>
+
+
+        <hr style="visibility: hidden;" />
+        <ul class="pager">
+          
+          <li class="previous">
+            <a href="/UltTransformer/ulttransformer.github.io/posts/complement-your-vdi-environment-with-nsx/complement-your-vdi-environment-with-nsx-idfw/" data-toggle="tooltip" data-placement="top" title="Complement your VDI environment with NSX">
+              Previous<br>
+              <span>Complement your VDI environment with NSX</span>
+            </a>
+          </li>
+          
+          
+          <li class="next">
+            <a href="/UltTransformer/ulttransformer.github.io/posts/complement-your-vdi-environment-with-nsx/complement-your-vdi-environment-with-nsx-ids-ips/" data-toggle="tooltip" data-placement="top" title="Complement your VDI environment with NSX">
+              Next<br>
+              <span>Complement your VDI environment with NSX</span>
+            </a>
+          </li>
+          
+        </ul>
+        <hr style="visibility: hidden;" />
+
+        
+        
+
+
+
+<div class="giscus" id="comments"></div>
+<script src="https://giscus.app/client.js" 
+  data-repo="roninro/hugo-theme-puppet" 
+  data-repo-id="R_kgDOHuvyhw"
+  data-category="General"
+  data-category-id="DIC_kwDOHuvyh84CQjDo"
+  data-mapping="pathname"
+  data-strict="0" 
+  data-reactions-enabled="1" 
+  data-emit-metadata="0" 
+  data-input-position="top"
+  data-theme="light_tritanopia"
+  data-lang="en"
+  crossorigin="anonymous"
+  async>
+  </script>
+
+
+
+
+      </div>
+
+      
+      
+      
+      
+      <div class="
+              col-lg-8 col-lg-offset-2
+              col-md-10 col-md-offset-1
+              sidebar-container">
+
+        
+        
+        <section>
+  
+  
+  <hr class="hidden-sm hidden-xs">
+  
+  <h5>FEATURED TAGS</h5>
+  <div class="tags">
+    
+    <a href="/UltTransformer/ulttransformer.github.io/tags/nsx/">NSX</a>
+    
+    <a href="/UltTransformer/ulttransformer.github.io/tags/vcdx/">VCDX</a>
+    
+  </div>
+</section>
+
+        
+        
+
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+  
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        
+        <ul class="list-inline text-center">
+
+<li>
+  <a href="https://github.com/UltTransformer" target="_blank">
+    <span class="fa-stack fa-lg">
+      <i class="fa fa-circle fa-stack-2x"></i>
+      <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+    </span>
+  </a>
+</li>
+
+<li>
+  <a href="https://linkedin.com/in/chrisgrahamnoon" target="_blank">
+    <span class="fa-stack fa-lg">
+      <i class="fa fa-circle fa-stack-2x"></i>
+      <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+    </span>
+  </a>
+</li>
+
+<li>
+  <a href="https://twitter.com/UltTransformer" target="_blank">
+    <span class="fa-stack fa-lg">
+      <i class="fa fa-circle fa-stack-2x"></i>
+      <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+    </span>
+  </a>
+</li>
+
+
+<li>
+  <a href="/UltTransformer/ulttransformer.github.io/index.xml" target="_blank">
+    <span class="fa-stack fa-lg">
+      <i class="fa fa-circle fa-stack-2x"></i>
+      <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+    </span>
+  </a>
+</li></ul>
+
+        <p class="copyright text-muted">
+          Copyright &copy; UltTransformer 2023  
+          <br>
+          Powered by <a href="https://gohugo.io">Hugo</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src=/UltTransformer/ulttransformer.github.io/js/jquery.min.js></script>
+<script src=/UltTransformer/ulttransformer.github.io/js/bootstrap.min.js crossorigin="anonymous"></script>
+
+
+
+<script src="/UltTransformer/ulttransformer.github.io/js/hux-blog.min.c4ea77041cd3edbfc8b2622cd887a9a5d8760a4162d14489e36d2a3fa4c90172.js"></script>
+
+
+<script src=/UltTransformer/ulttransformer.github.io/js/simple-jekyll-search.min.js></script>
+
+
+<script src="/UltTransformer/ulttransformer.github.io/js/search.min.7745d073869679b8854e21dbabcc76e6ccea754eb4bb2482daa9d96718dff503.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="/UltTransformer/ulttransformer.github.io/zoomjs/zoom.min.js"></script>
+
+</body>
+
+</html>
