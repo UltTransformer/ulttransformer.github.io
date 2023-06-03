@@ -2,12 +2,12 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://ulttransformer.github.io/categories.html</loc>
+    <loc>/categories.html</loc>
   </url><url>
-    <loc>https://ulttransformer.github.io/</loc>
+    <loc>/</loc>
   </url><url>
-    <loc>https://ulttransformer.github.io/series.html</loc>
+    <loc>/series.html</loc>
   </url><url>
-    <loc>https://ulttransformer.github.io/tags.html</loc>
+    <loc>/tags.html</loc>
   </url>
 </urlset>
