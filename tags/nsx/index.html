@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  
+    
+  <title>NSX | UltTransformer</title>
+  <meta name="author" content="Puppet">
+  <meta name="description" content="by Chris Noon">
+  <meta name="keywords" content="blog,developer,personal">
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="NSX"/>
+<meta name="twitter:description" content="by Chris Noon"/>
+
+  <meta property="og:title" content="NSX" />
+<meta property="og:description" content="by Chris Noon" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://github.com/UltTransformer/ulttransformer.github.io/tags/nsx/" />
+
+  <link rel="stylesheet" href="/UltTransformer/ulttransformer.github.io/css/bootstrap.min.css"  crossorigin="anonymous">
+  
+  <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/all.min.css" rel="stylesheet" type="text/css">
+
+  <link rel="stylesheet" href="/UltTransformer/ulttransformer.github.io/sass/main.css">
+
+  <link rel="stylesheet" href="/UltTransformer/ulttransformer.github.io/zoomjs/zoom.min.css">
+
+  <script src=/UltTransformer/ulttransformer.github.io/js/lazysizes.min.js></script>
+
+  <link rel="alternate" type="application/rss+xml" href="/UltTransformer/ulttransformer.github.io/tags/nsx/index.xml" title="UltTransformer" />
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="/UltTransformer/ulttransformer.github.io/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/UltTransformer/ulttransformer.github.io/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/UltTransformer/ulttransformer.github.io/favicon-16x16.png">
+  <link rel="manifest" href="/UltTransformer/ulttransformer.github.io/site.webmanifest">
+  
+
+</head>
+
+
+
+<body ontouchstart="">
+  <nav class="navbar navbar-default navbar-custom navbar-fixed-top invert">
+  <div class="container-fluid">
+    
+    <div class="navbar-header page-scroll">
+      <button type="button" class="navbar-toggle">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://github.com/UltTransformer/ulttransformer.github.io">UltTransformer</a>
+    </div>
+    
+    <div id="huxblog_navbar">
+      <div class="navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          
+          <li><a href="/UltTransformer/ulttransformer.github.io/" title="Home">Home</a></li>
+          
+          <li><a href="/UltTransformer/ulttransformer.github.io/posts/" title="Posts">Posts</a></li>
+          
+          <li><a href="/UltTransformer/ulttransformer.github.io/about/" title="About">About</a></li>
+          
+
+          <li class="search-icon">
+            <a href="javascript:void(0)">
+              <i class="fa fa-search"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    
+  </div>
+  
+</nav>
+<script>
+  
+  
+  
+  var $body = document.body;
+  var $toggle = document.querySelector(".navbar-toggle");
+  var $navbar = document.querySelector("#huxblog_navbar");
+  var $collapse = document.querySelector(".navbar-collapse");
+
+  var __HuxNav__ = {
+    close: function () {
+      $navbar.className = " ";
+      
+      setTimeout(function () {
+        
+        if ($navbar.className.indexOf("in") < 0) {
+          $collapse.style.height = "0px";
+        }
+      }, 400);
+    },
+    open: function () {
+      $collapse.style.height = "auto";
+      $navbar.className += " in";
+    },
+  };
+
+  
+  $toggle.addEventListener("click", function (e) {
+    if ($navbar.className.indexOf("in") > 0) {
+      __HuxNav__.close();
+    } else {
+      __HuxNav__.open();
+    }
+  });
+
+  
+
+  document.addEventListener("click", function (e) {
+    if (e.target == $toggle) return;
+    if (e.target.className == "icon-bar") return;
+    __HuxNav__.close();
+  });
+</script>
+  
+<div class="search-page">
+  <div class="search-icon-close-container">
+    <span class="search-icon-close">
+      <i class="fa fa-chevron-down"></i>
+    </span>
+  </div>
+  <div class="search-main container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <form></form>
+        <input type="text" id="search-input" placeholder="$ grep...">
+        </form>
+        <div id="search-results" class="mini-post-list"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  
+  
+
+
+
+<header class="intro-header style-text">
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        
+        <div class="site-heading">
+        
+          <h1>NSX</h1>
+          
+          
+          <span class="subheading"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+  
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      
+      <div class="mini-post-list">
+        
+
+        <section class="">
+          <span class="fa listing-seperator">
+            <span class="tag-text">2021</span></span>
+            
+            <div class="post-preview item" data-tags="nsx">
+  <a href="/UltTransformer/ulttransformer.github.io/posts/avi-networks-alb/nsx-alb-advanced-load-balancer-design/">
+      <h2 class="post-title">NSX ALB (Advanced Load Balancer) Design</h2>
+      <h3 class="post-subtitle">Overview</h3>
+  </a>
+<hr>
+</div>
+            
+            <div class="post-preview item" data-tags="nsx">
+  <a href="/UltTransformer/ulttransformer.github.io/posts/complement-your-vdi-environment-with-nsx/complement-your-vdi-environment-with-nsx-advanced-load-balancer/">
+      <h2 class="post-title">Complement your VDI environment with NSX</h2>
+      <h3 class="post-subtitle">Advanced Load Balancer</h3>
+  </a>
+<hr>
+</div>
+            
+            <div class="post-preview item" data-tags="nsx">
+  <a href="/UltTransformer/ulttransformer.github.io/posts/complement-your-vdi-environment-with-nsx/complement-your-vdi-environment-with-nsx-ids-ips/">
+      <h2 class="post-title">Complement your VDI environment with NSX</h2>
+      <h3 class="post-subtitle">IDS/IPS.</h3>
+  </a>
+<hr>
+</div>
+            
+            <div class="post-preview item" data-tags="nsx">
+  <a href="/UltTransformer/ulttransformer.github.io/posts/complement-your-vdi-environment-with-nsx/complement-your-vdi-environment-with-nsx-introspection-services/">
+      <h2 class="post-title">Complement your VDI environment with NSX</h2>
+      <h3 class="post-subtitle">Introspection Services</h3>
+  </a>
+<hr>
+</div>
+            
+            <div class="post-preview item" data-tags="nsx">
+  <a href="/UltTransformer/ulttransformer.github.io/posts/complement-your-vdi-environment-with-nsx/complement-your-vdi-environment-with-nsx-idfw/">
+      <h2 class="post-title">Complement your VDI environment with NSX</h2>
+      <h3 class="post-subtitle">IDFW</h3>
+  </a>
+<hr>
+</div>
+            
+            <div class="post-preview item" data-tags="nsx">
+  <a href="/UltTransformer/ulttransformer.github.io/posts/complement-your-vdi-environment-with-nsx/complement-your-vdi-environment-with-nsx-dfw/">
+      <h2 class="post-title">Complement your VDI environment with NSX</h2>
+      <h3 class="post-subtitle">dFW</h3>
+  </a>
+<hr>
+</div>
+            
+        </section>
+        
+
+        <section class="">
+          <span class="fa listing-seperator">
+            <span class="tag-text">2020</span></span>
+            
+            <div class="post-preview item" data-tags="nsx">
+  <a href="/UltTransformer/ulttransformer.github.io/posts/complement-your-vdi-environment-with-nsx/complement-your-vdi-environment-with-nsx/">
+      <h2 class="post-title">Complement your VDI environment with NSX</h2>
+      <h3 class="post-subtitle">Overview</h3>
+  </a>
+<hr>
+</div>
+            
+            <div class="post-preview item" data-tags="nsx">
+  <a href="/UltTransformer/ulttransformer.github.io/posts/nsx-t-on-vmc/nsx-t-automation-using-terraform-the-how-vmc/">
+      <h2 class="post-title">NSX-T Automation using Terraform</h2>
+      <h3 class="post-subtitle">The how!</h3>
+  </a>
+<hr>
+</div>
+            
+            <div class="post-preview item" data-tags="nsx">
+  <a href="/UltTransformer/ulttransformer.github.io/posts/nsx-t-on-vmc/nsx-t-automation-using-terraform-the-why/">
+      <h2 class="post-title">NSX-T Automation using Terraform</h2>
+      <h3 class="post-subtitle">The why!</h3>
+  </a>
+<hr>
+</div>
+            
+            <div class="post-preview item" data-tags="nsx">
+  <a href="/UltTransformer/ulttransformer.github.io/posts/avi-networks-alb/avi-networks-base-configuration-via-api/">
+      <h2 class="post-title">Avi Networks | NSX ALB</h2>
+      <h3 class="post-subtitle">Base Configuration via API</h3>
+  </a>
+<hr>
+</div>
+            
+            <div class="post-preview item" data-tags="nsx">
+  <a href="/UltTransformer/ulttransformer.github.io/posts/avi-networks-alb/avi-networks-base-configuration/">
+      <h2 class="post-title">Avi Networks | NSX ALB</h2>
+      <h3 class="post-subtitle">Base Configuration</h3>
+  </a>
+<hr>
+</div>
+            
+            <div class="post-preview item" data-tags="nsx">
+  <a href="/UltTransformer/ulttransformer.github.io/posts/avi-networks-alb/avi-networks-the-advanced-nsx-load-balancer/">
+      <h2 class="post-title">Avi Networks | NSX ALB</h2>
+      <h3 class="post-subtitle">The Advanced NSX Load Balancer</h3>
+  </a>
+<hr>
+</div>
+            
+        </section>
+        
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+  
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        
+        <ul class="list-inline text-center">
+
+<li>
+  <a href="https://github.com/UltTransformer" target="_blank">
+    <span class="fa-stack fa-lg">
+      <i class="fa fa-circle fa-stack-2x"></i>
+      <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+    </span>
+  </a>
+</li>
+
+<li>
+  <a href="https://linkedin.com/in/chrisgrahamnoon" target="_blank">
+    <span class="fa-stack fa-lg">
+      <i class="fa fa-circle fa-stack-2x"></i>
+      <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+    </span>
+  </a>
+</li>
+
+<li>
+  <a href="https://twitter.com/UltTransformer" target="_blank">
+    <span class="fa-stack fa-lg">
+      <i class="fa fa-circle fa-stack-2x"></i>
+      <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+    </span>
+  </a>
+</li>
+
+
+<li>
+  <a href="/UltTransformer/ulttransformer.github.io/index.xml" target="_blank">
+    <span class="fa-stack fa-lg">
+      <i class="fa fa-circle fa-stack-2x"></i>
+      <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+    </span>
+  </a>
+</li></ul>
+
+        <p class="copyright text-muted">
+          Copyright &copy; UltTransformer 2023  
+          <br>
+          Powered by <a href="https://gohugo.io">Hugo</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src=/UltTransformer/ulttransformer.github.io/js/jquery.min.js></script>
+<script src=/UltTransformer/ulttransformer.github.io/js/bootstrap.min.js crossorigin="anonymous"></script>
+
+
+
+<script src="/UltTransformer/ulttransformer.github.io/js/hux-blog.min.c4ea77041cd3edbfc8b2622cd887a9a5d8760a4162d14489e36d2a3fa4c90172.js"></script>
+
+
+<script src=/UltTransformer/ulttransformer.github.io/js/simple-jekyll-search.min.js></script>
+
+
+<script src="/UltTransformer/ulttransformer.github.io/js/search.min.7745d073869679b8854e21dbabcc76e6ccea754eb4bb2482daa9d96718dff503.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="/UltTransformer/ulttransformer.github.io/zoomjs/zoom.min.js"></script>
+
+</body>
+
+</html>
