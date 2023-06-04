@@ -6,7 +6,74 @@
     <description>Recent content on UltTransformer</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 03 Feb 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://ulttransformer.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 01 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://ulttransformer.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Chris&#39; Corner - May 2023</title>
+      <link>https://ulttransformer.github.io/posts/env0/chris-corner-may-2023/</link>
+      <pubDate>Mon, 01 May 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ulttransformer.github.io/posts/env0/chris-corner-may-2023/</guid>
+      <description>Note: This is a copy of my env0 post.
+Introductionenv0 has released 3 key features this month, directly helping new and existing customers. One of our features has already been covered in a separate blog, the Private provider registry.
+Remote state access control - Share state between projects within env0. Private provider registry - Use both public and private providers. Private plugins - Integrate your own privately hosted plugin. Project-level remote backend enforcement - Force env0 remote state on all deployments within a Project.</description>
+    </item>
+    
+    <item>
+      <title>Chris&#39; Corner - April 2023</title>
+      <link>https://ulttransformer.github.io/posts/env0/chris-corner-april-2023/</link>
+      <pubDate>Sat, 01 Apr 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ulttransformer.github.io/posts/env0/chris-corner-april-2023/</guid>
+      <description>Note: This is a copy of my env0 post.
+IntroductionIn the second iteration of Chris’ Corner, we will review the features released in the month of March. There were only 2 released last month, but no need to panic, they are both great features.
+Sub Projects - Create project granularity within env0, allowing users to create a hierarchical structure. PR Comments With Role-Based Access - Map your VCS provider user to your env0&amp;rsquo;s custom roles, and enforce their permissions while using the PR comment flow.</description>
+    </item>
+    
+    <item>
+      <title>Provider Registry</title>
+      <link>https://ulttransformer.github.io/posts/env0/provider-registry/</link>
+      <pubDate>Sat, 01 Apr 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ulttransformer.github.io/posts/env0/provider-registry/</guid>
+      <description>Note: This is a copy of my env0 post.
+What is it and why do we need it?Providers are used by Terraform as a set of instructions on how to interact with an endpoint. Put simply, if you want to automate the build of your env0 structure, you can use Terraform in conjunction with the env0 Provider. Terraform is the engine, the Provider handles the directions.
+The eco-system is filled with open source Providers that are hosted on Hashicorp public Provider Registry, to mention a few:</description>
+    </item>
+    
+    <item>
+      <title>Chris&#39; Corner - March 2023</title>
+      <link>https://ulttransformer.github.io/posts/env0/chris-corner-march-2023/</link>
+      <pubDate>Wed, 01 Mar 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ulttransformer.github.io/posts/env0/chris-corner-march-2023/</guid>
+      <description>Note: This is a copy of my env0 post.
+IntroductionThe development within the env0 platform is fantastic, one of the many reasons I love working here. The features come thick and fast and this is the motivation behind this monthly blog, to highlight the latest features and showcase Chris’ favorites.
+If you want to keep up to date with the features as they are released, follow the changelog.
+So far in 2023, we’ve released the following features:</description>
+    </item>
+    
+    <item>
+      <title>More Recommendations for Migrating from Terraform Cloud</title>
+      <link>https://ulttransformer.github.io/posts/env0/recommendations-for-migrating-from-terraform-cloud/</link>
+      <pubDate>Tue, 01 Nov 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://ulttransformer.github.io/posts/env0/recommendations-for-migrating-from-terraform-cloud/</guid>
+      <description>Note: This is a copy of my env0 post.
+In mid-2021, Tim Davis wrote a blog on migrating the state from TFC (Terraform Cloud) to another IaC management platform.
+It does a great job of highlighting how TFC and env0 function in terms of both runs and state, or at least it did. Since this original post, the env0 Platform evolution has been quick and with features and improvements coming out every week, it can be hard to keep up.</description>
+    </item>
+    
+    <item>
+      <title>How to make managing multiple Terraform environments easier</title>
+      <link>https://ulttransformer.github.io/posts/env0/how-to-make-managing-multiple-terraform-environments-easier/</link>
+      <pubDate>Sat, 01 Oct 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://ulttransformer.github.io/posts/env0/how-to-make-managing-multiple-terraform-environments-easier/</guid>
+      <description>Note: This is a copy of my env0 post.
+How many of you have started with Terraform and discovered you need the same code to build multiple environments? Perhaps a dev, stage, and production environment? After researching Workspaces, Branches, and Terragrunt, you aren’t completely satisfied and want to know if there is another way. If you are here, I’ll assume that’s you!
+WorkspacesWorkspaces are a native Terraform construct, offering a reduction in duplicate code and methods of configuring environments differently based on the Workspace name.</description>
+    </item>
+    
     <item>
       <title>NSX CSM (Cloud Service Manager)</title>
       <link>https://ulttransformer.github.io/posts/nsx/nsx-csm-cloud-service-manager-ca-certificate/</link>
