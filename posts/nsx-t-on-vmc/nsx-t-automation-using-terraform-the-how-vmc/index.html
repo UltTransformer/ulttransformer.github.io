@@ -195,7 +195,7 @@ I use Terraform for 2 things. The first is to spin up SDDC’s on VMC and config
               col-lg-8 col-lg-offset-2
               col-md-10 col-md-offset-1
               post-container">
-        <p>I started the series with a post about why I <a href="https://vmusketeers.com/2020/08/03/nsx-t-automation-using-terraform-the-why/" target="_blank">wanted to use Terraform</a>. Now we have the why out of the way, let’s get to the fun stuff… the how!</p>
+        <p>I started the series with a post about why I <a href="https://www.ulttransformer.com/posts/nsx-t-on-vmc/nsx-t-automation-using-terraform-the-why/" target="_blank">wanted to use Terraform</a>. Now we have the why out of the way, let’s get to the fun stuff… the how!</p>
 <p>I use Terraform for 2 things. The first is to spin up SDDC’s on VMC and configure the VMC NSX-T piece. The second is spinning up NSX-T environments in the lab, which will hopefully make it into production one day. In this post, I’ll focus on the VMC element.</p>
 <h3 id="the-vmc-environment">The VMC Environment<a class="anchorjs-link" href="#the-vmc-environment"></a></h3><p>I’ll start by assuming you know what VMC on AWS is and have a high-level understanding of its concepts and what it delivers.</p>
 <p>I’ll skip the step for deploying a VMC SDDC using Terraform, but if you want to read how to do that, then check out Nico’s post, which got me started.</p>
@@ -203,7 +203,7 @@ I use Terraform for 2 things. The first is to spin up SDDC’s on VMC and config
 <p>While NSX-T is the SDN of choice for VMC, it isn’t a “fully functioning” version of NSX and there are differences in both the UI and the features. Below is a screenshot of the UI, which you can see differs from the standard NSX view. Functionality is almost identical, but there is no Load Balancing natively within the environment.</p>
 <p><figure>
   <a class="paragraph-image">
-    <img data-src="https://vmusketeers.com/wp-content/uploads/2020/08/Screenshot-2020-08-06-at-14.34.10-1024x573.png" data-action="zoom" alt="VMC Environment"  class="lazyload">
+    <img data-src="/img/nsx-t-automation-using-terraform/the-how-vmc-logical-diagram.png" data-action="zoom" alt="VMC Environment"  class="lazyload">
   </a>
   
 </figure></p>
@@ -360,7 +360,7 @@ I use Terraform for 2 things. The first is to spin up SDDC’s on VMC and config
 </span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31</span><span> &#34;terraform apply&#34; is subsequently run.
 </span></span></code></pre></div><p><figure>
   <a class="paragraph-image">
-    <img data-src="https://vmusketeers.com/wp-content/uploads/2020/08/Screenshot-2020-08-07-at-10.06.05-1024x350.png" data-action="zoom" alt="Mgmt Groups"  class="lazyload">
+    <img data-src="/img/nsx-t-automation-using-terraform/the-how-vmc-mgmt-groups.png" data-action="zoom" alt="Mgmt Groups"  class="lazyload">
   </a>
   
 </figure></p>

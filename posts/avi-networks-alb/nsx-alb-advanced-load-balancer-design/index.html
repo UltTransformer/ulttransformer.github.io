@@ -11,17 +11,17 @@
   <title>NSX ALB (Advanced Load Balancer) Design | UltTransformer</title>
   <meta name="author" content="Puppet">
   <meta name="description" content="I wrote three (3) blogs on Avi Load Balancing, now rebranded as VMware NSX ALB (Advanced Load Balancer). These were around the basic concepts, base configuration, and that configuration using API.
-https://vmusketeers.com/2020/05/09/avi-networks-the-advanced-nsx-load-balancer/ https://vmusketeers.com/2020/05/24/avi-networks-base-configuration/ https://vmusketeers.com/2020/06/19/avi-network-base-configuration-via-api/ I noticed it was difficult to find a single post that discusses the different types of design solutions. In this post, I want to discuss the design decisions when deploying an ALB solution and expand on my previous blogs.">
+https://www.ulttransformer.com/posts/avi-networks-alb/avi-networks-the-advanced-nsx-load-balancer/ https://www.ulttransformer.com/posts/avi-networks-alb/avi-networks-base-configuration/ https://www.ulttransformer.com/posts/avi-networks-alb/avi-networks-base-configuration-via-api/ I noticed it was difficult to find a single post that discusses the different types of design solutions. In this post, I want to discuss the design decisions when deploying an ALB solution and expand on my previous blogs.">
   <meta name="keywords" content="blog,developer,personal">
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="NSX ALB (Advanced Load Balancer) Design"/>
 <meta name="twitter:description" content="I wrote three (3) blogs on Avi Load Balancing, now rebranded as VMware NSX ALB (Advanced Load Balancer). These were around the basic concepts, base configuration, and that configuration using API.
-https://vmusketeers.com/2020/05/09/avi-networks-the-advanced-nsx-load-balancer/ https://vmusketeers.com/2020/05/24/avi-networks-base-configuration/ https://vmusketeers.com/2020/06/19/avi-network-base-configuration-via-api/ I noticed it was difficult to find a single post that discusses the different types of design solutions. In this post, I want to discuss the design decisions when deploying an ALB solution and expand on my previous blogs."/>
+https://www.ulttransformer.com/posts/avi-networks-alb/avi-networks-the-advanced-nsx-load-balancer/ https://www.ulttransformer.com/posts/avi-networks-alb/avi-networks-base-configuration/ https://www.ulttransformer.com/posts/avi-networks-alb/avi-networks-base-configuration-via-api/ I noticed it was difficult to find a single post that discusses the different types of design solutions. In this post, I want to discuss the design decisions when deploying an ALB solution and expand on my previous blogs."/>
 
   <meta property="og:title" content="NSX ALB (Advanced Load Balancer) Design" />
 <meta property="og:description" content="I wrote three (3) blogs on Avi Load Balancing, now rebranded as VMware NSX ALB (Advanced Load Balancer). These were around the basic concepts, base configuration, and that configuration using API.
-https://vmusketeers.com/2020/05/09/avi-networks-the-advanced-nsx-load-balancer/ https://vmusketeers.com/2020/05/24/avi-networks-base-configuration/ https://vmusketeers.com/2020/06/19/avi-network-base-configuration-via-api/ I noticed it was difficult to find a single post that discusses the different types of design solutions. In this post, I want to discuss the design decisions when deploying an ALB solution and expand on my previous blogs." />
+https://www.ulttransformer.com/posts/avi-networks-alb/avi-networks-the-advanced-nsx-load-balancer/ https://www.ulttransformer.com/posts/avi-networks-alb/avi-networks-base-configuration/ https://www.ulttransformer.com/posts/avi-networks-alb/avi-networks-base-configuration-via-api/ I noticed it was difficult to find a single post that discusses the different types of design solutions. In this post, I want to discuss the design decisions when deploying an ALB solution and expand on my previous blogs." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://ulttransformer.github.io/posts/avi-networks-alb/nsx-alb-advanced-load-balancer-design/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2021-12-06T00:00:00+00:00" />
@@ -197,9 +197,9 @@ https://vmusketeers.com/2020/05/09/avi-networks-the-advanced-nsx-load-balancer/ 
               post-container">
         <p>I wrote three (3) blogs on Avi Load Balancing, now rebranded as VMware NSX ALB (Advanced Load Balancer). These were around the basic concepts, base configuration, and that configuration using API.</p>
 <ul>
-<li><a href="https://vmusketeers.com/2020/05/09/avi-networks-the-advanced-nsx-load-balancer/" target="_blank">https://vmusketeers.com/2020/05/09/avi-networks-the-advanced-nsx-load-balancer/</a></li>
-<li><a href="https://vmusketeers.com/2020/05/24/avi-networks-base-configuration/" target="_blank">https://vmusketeers.com/2020/05/24/avi-networks-base-configuration/</a></li>
-<li><a href="https://vmusketeers.com/2020/06/19/avi-network-base-configuration-via-api/" target="_blank">https://vmusketeers.com/2020/06/19/avi-network-base-configuration-via-api/</a></li>
+<li><a href="https://www.ulttransformer.com/posts/avi-networks-alb/avi-networks-the-advanced-nsx-load-balancer/" target="_blank">https://www.ulttransformer.com/posts/avi-networks-alb/avi-networks-the-advanced-nsx-load-balancer/</a></li>
+<li><a href="https://www.ulttransformer.com/posts/avi-networks-alb/avi-networks-base-configuration/" target="_blank">https://www.ulttransformer.com/posts/avi-networks-alb/avi-networks-base-configuration/</a></li>
+<li><a href="https://www.ulttransformer.com/posts/avi-networks-alb/avi-networks-base-configuration-via-api/" target="_blank">https://www.ulttransformer.com/posts/avi-networks-alb/avi-networks-base-configuration-via-api/</a></li>
 </ul>
 <p>I noticed it was difficult to find a single post that discusses the different types of design solutions. In this post, I want to discuss the design decisions when deploying an ALB solution and expand on my previous blogs.</p>
 <h3 id="management-components">Management Components<a class="anchorjs-link" href="#management-components"></a></h3><p>The management components in the ALB solution are the controllers. The controllers are what the users interact with that which pushes instructions to the data plane components. They can be deployed in one (1) of two (2) ways:</p>

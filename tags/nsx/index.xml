@@ -14,7 +14,7 @@
       
       <guid>https://ulttransformer.github.io/posts/avi-networks-alb/nsx-alb-advanced-load-balancer-design/</guid>
       <description>I wrote three (3) blogs on Avi Load Balancing, now rebranded as VMware NSX ALB (Advanced Load Balancer). These were around the basic concepts, base configuration, and that configuration using API.
-https://vmusketeers.com/2020/05/09/avi-networks-the-advanced-nsx-load-balancer/ https://vmusketeers.com/2020/05/24/avi-networks-base-configuration/ https://vmusketeers.com/2020/06/19/avi-network-base-configuration-via-api/ I noticed it was difficult to find a single post that discusses the different types of design solutions. In this post, I want to discuss the design decisions when deploying an ALB solution and expand on my previous blogs.</description>
+https://www.ulttransformer.com/posts/avi-networks-alb/avi-networks-the-advanced-nsx-load-balancer/ https://www.ulttransformer.com/posts/avi-networks-alb/avi-networks-base-configuration/ https://www.ulttransformer.com/posts/avi-networks-alb/avi-networks-base-configuration-via-api/ I noticed it was difficult to find a single post that discusses the different types of design solutions. In this post, I want to discuss the design decisions when deploying an ALB solution and expand on my previous blogs.</description>
     </item>
     
     <item>
@@ -23,7 +23,7 @@ https://vmusketeers.com/2020/05/09/avi-networks-the-advanced-nsx-load-balancer/ 
       <pubDate>Sun, 11 Apr 2021 00:00:00 +0000</pubDate>
       
       <guid>https://ulttransformer.github.io/posts/complement-your-vdi-environment-with-nsx/complement-your-vdi-environment-with-nsx-advanced-load-balancer/</guid>
-      <description>Part 1: Complement your VDI environment with NSX. Part 2: Complement your VDI environment with NSX: dFW. Part 3: Complement your VDI environment with NSX: IDFW. Part 4: Complement your VDI environment with NSX: Introspection Services. Part 5: Complement your VDI environment with NSX: IDS/IPS. Part 6: Complement your VDI environment with NSX: Advanced Load Balancer Thanks to Siegfried Huijgen I ended up receiving a lot of attention on the 5 part series, which spun off into a request for a part 6 on Avi Networks Load Balancing.</description>
+      <description>Part 1: Complement your VDI environment with NSX Part 2: Complement your VDI environment with NSX: dFW Part 3: Complement your VDI environment with NSX: IDFW Part 4: Complement your VDI environment with NSX: Introspection Services Part 5: Complement your VDI environment with NSX: IDS/IPS Part 6: Complement your VDI environment with NSX: Advanced Load Balancer Thanks to Siegfried Huijgen I ended up receiving a lot of attention on the 5 part series, which spun off into a request for a part 6 on Avi Networks Load Balancing.</description>
     </item>
     
     <item>
@@ -32,7 +32,7 @@ https://vmusketeers.com/2020/05/09/avi-networks-the-advanced-nsx-load-balancer/ 
       <pubDate>Tue, 16 Mar 2021 00:00:00 +0000</pubDate>
       
       <guid>https://ulttransformer.github.io/posts/complement-your-vdi-environment-with-nsx/complement-your-vdi-environment-with-nsx-ids-ips/</guid>
-      <description>Part 1: Complement your VDI environment with NSX. Part 2: Complement your VDI environment with NSX: dFW. Part 3: Complement your VDI environment with NSX: IDFW. Part 4: Complement your VDI environment with NSX: Introspection Services. Part 5: Complement your VDI environment with NSX: IDS/IPS. Part 6: Complement your VDI environment with NSX: Advanced Load Balancer The final post of this series will be around NSX IDS (Intrusion Detection System) and IPS (Intrusion Prevention System).</description>
+      <description>Part 1: Complement your VDI environment with NSX Part 2: Complement your VDI environment with NSX: dFW Part 3: Complement your VDI environment with NSX: IDFW Part 4: Complement your VDI environment with NSX: Introspection Services Part 5: Complement your VDI environment with NSX: IDS/IPS Part 6: Complement your VDI environment with NSX: Advanced Load Balancer The final post of this series will be around NSX IDS (Intrusion Detection System) and IPS (Intrusion Prevention System).</description>
     </item>
     
     <item>
@@ -41,7 +41,7 @@ https://vmusketeers.com/2020/05/09/avi-networks-the-advanced-nsx-load-balancer/ 
       <pubDate>Sun, 28 Feb 2021 00:00:00 +0000</pubDate>
       
       <guid>https://ulttransformer.github.io/posts/complement-your-vdi-environment-with-nsx/complement-your-vdi-environment-with-nsx-introspection-services/</guid>
-      <description>Part 1: Complement your VDI environment with NSX. Part 2: Complement your VDI environment with NSX: dFW. Part 3: Complement your VDI environment with NSX: IDFW. Part 4: Complement your VDI environment with NSX: Introspection Services. Part 5: Complement your VDI environment with NSX: IDS/IPS. Part 6: Complement your VDI environment with NSX: Advanced Load Balancer Unfortunately, this post will be more of a theoretical one. I don’t have access to any introspection service providers.</description>
+      <description>Part 1: Complement your VDI environment with NSX Part 2: Complement your VDI environment with NSX: dFW Part 3: Complement your VDI environment with NSX: IDFW Part 4: Complement your VDI environment with NSX: Introspection Services Part 5: Complement your VDI environment with NSX: IDS/IPS Part 6: Complement your VDI environment with NSX: Advanced Load Balancer Unfortunately, this post will be more of a theoretical one. I don’t have access to any introspection service providers.</description>
     </item>
     
     <item>
@@ -50,7 +50,7 @@ https://vmusketeers.com/2020/05/09/avi-networks-the-advanced-nsx-load-balancer/ 
       <pubDate>Fri, 29 Jan 2021 00:00:00 +0000</pubDate>
       
       <guid>https://ulttransformer.github.io/posts/complement-your-vdi-environment-with-nsx/complement-your-vdi-environment-with-nsx-idfw/</guid>
-      <description>Part 1: Complement your VDI environment with NSX. Part 2: Complement your VDI environment with NSX: dFW. Part 3: Complement your VDI environment with NSX: IDFW. Part 4: Complement your VDI environment with NSX: Introspection Services. Part 5: Complement your VDI environment with NSX: IDS/IPS. Part 6: Complement your VDI environment with NSX: Advanced Load Balancer Before I start. Shout out to Bilal Ahmed, a fellow vMusketeer who helped me with this post.</description>
+      <description>Part 1: Complement your VDI environment with NSX Part 2: Complement your VDI environment with NSX: dFW Part 3: Complement your VDI environment with NSX: IDFW Part 4: Complement your VDI environment with NSX: Introspection Services Part 5: Complement your VDI environment with NSX: IDS/IPS Part 6: Complement your VDI environment with NSX: Advanced Load Balancer Before I start. Shout out to Bilal Ahmed, a fellow vMusketeer who helped me with this post.</description>
     </item>
     
     <item>
@@ -59,7 +59,7 @@ https://vmusketeers.com/2020/05/09/avi-networks-the-advanced-nsx-load-balancer/ 
       <pubDate>Sun, 03 Jan 2021 00:00:00 +0000</pubDate>
       
       <guid>https://ulttransformer.github.io/posts/complement-your-vdi-environment-with-nsx/complement-your-vdi-environment-with-nsx-dfw/</guid>
-      <description>Part 1: Complement your VDI environment with NSX. Part 2: Complement your VDI environment with NSX: dFW. Part 3: Complement your VDI environment with NSX: IDFW. Part 4: Complement your VDI environment with NSX: Introspection Services. Part 5: Complement your VDI environment with NSX: IDS/IPS. Part 6: Complement your VDI environment with NSX: Advanced Load Balancer I started the series discussing the different features within NSX that can complement a VDI environment.</description>
+      <description>Part 1: Complement your VDI environment with NSX Part 2: Complement your VDI environment with NSX: dFW Part 3: Complement your VDI environment with NSX: IDFW Part 4: Complement your VDI environment with NSX: Introspection Services Part 5: Complement your VDI environment with NSX: IDS/IPS Part 6: Complement your VDI environment with NSX: Advanced Load Balancer I started the series discussing the different features within NSX that can complement a VDI environment.</description>
     </item>
     
     <item>
@@ -68,7 +68,7 @@ https://vmusketeers.com/2020/05/09/avi-networks-the-advanced-nsx-load-balancer/ 
       <pubDate>Thu, 26 Nov 2020 00:00:00 +0000</pubDate>
       
       <guid>https://ulttransformer.github.io/posts/complement-your-vdi-environment-with-nsx/complement-your-vdi-environment-with-nsx/</guid>
-      <description>Part 1: Complement your VDI environment with NSX. Part 2: Complement your VDI environment with NSX: dFW. Part 3: Complement your VDI environment with NSX: IDFW. Part 4: Complement your VDI environment with NSX: Introspection Services. Part 5: Complement your VDI environment with NSX: IDS/IPS. Part 6: Complement your VDI environment with NSX: Advanced Load Balancer Over the past few weeks, I’ve been working with a number of customers that are keen to see how NSX can complement their existing or new VDI environment(s).</description>
+      <description>Part 1: Complement your VDI environment with NSX Part 2: Complement your VDI environment with NSX: dFW Part 3: Complement your VDI environment with NSX: IDFW Part 4: Complement your VDI environment with NSX: Introspection Services Part 5: Complement your VDI environment with NSX: IDS/IPS Part 6: Complement your VDI environment with NSX: Advanced Load Balancer Over the past few weeks, I’ve been working with a number of customers that are keen to see how NSX can complement their existing or new VDI environment(s).</description>
     </item>
     
     <item>

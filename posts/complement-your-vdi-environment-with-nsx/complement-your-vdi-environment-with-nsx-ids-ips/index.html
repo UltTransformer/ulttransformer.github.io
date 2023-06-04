@@ -10,15 +10,15 @@
     
   <title>Complement your VDI environment with NSX | UltTransformer</title>
   <meta name="author" content="Puppet">
-  <meta name="description" content="Part 1: Complement your VDI environment with NSX. Part 2: Complement your VDI environment with NSX: dFW. Part 3: Complement your VDI environment with NSX: IDFW. Part 4: Complement your VDI environment with NSX: Introspection Services. Part 5: Complement your VDI environment with NSX: IDS/IPS. Part 6: Complement your VDI environment with NSX: Advanced Load Balancer The final post of this series will be around NSX IDS (Intrusion Detection System) and IPS (Intrusion Prevention System).">
+  <meta name="description" content="Part 1: Complement your VDI environment with NSX Part 2: Complement your VDI environment with NSX: dFW Part 3: Complement your VDI environment with NSX: IDFW Part 4: Complement your VDI environment with NSX: Introspection Services Part 5: Complement your VDI environment with NSX: IDS/IPS Part 6: Complement your VDI environment with NSX: Advanced Load Balancer The final post of this series will be around NSX IDS (Intrusion Detection System) and IPS (Intrusion Prevention System).">
   <meta name="keywords" content="blog,developer,personal">
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Complement your VDI environment with NSX"/>
-<meta name="twitter:description" content="Part 1: Complement your VDI environment with NSX. Part 2: Complement your VDI environment with NSX: dFW. Part 3: Complement your VDI environment with NSX: IDFW. Part 4: Complement your VDI environment with NSX: Introspection Services. Part 5: Complement your VDI environment with NSX: IDS/IPS. Part 6: Complement your VDI environment with NSX: Advanced Load Balancer The final post of this series will be around NSX IDS (Intrusion Detection System) and IPS (Intrusion Prevention System)."/>
+<meta name="twitter:description" content="Part 1: Complement your VDI environment with NSX Part 2: Complement your VDI environment with NSX: dFW Part 3: Complement your VDI environment with NSX: IDFW Part 4: Complement your VDI environment with NSX: Introspection Services Part 5: Complement your VDI environment with NSX: IDS/IPS Part 6: Complement your VDI environment with NSX: Advanced Load Balancer The final post of this series will be around NSX IDS (Intrusion Detection System) and IPS (Intrusion Prevention System)."/>
 
   <meta property="og:title" content="Complement your VDI environment with NSX" />
-<meta property="og:description" content="Part 1: Complement your VDI environment with NSX. Part 2: Complement your VDI environment with NSX: dFW. Part 3: Complement your VDI environment with NSX: IDFW. Part 4: Complement your VDI environment with NSX: Introspection Services. Part 5: Complement your VDI environment with NSX: IDS/IPS. Part 6: Complement your VDI environment with NSX: Advanced Load Balancer The final post of this series will be around NSX IDS (Intrusion Detection System) and IPS (Intrusion Prevention System)." />
+<meta property="og:description" content="Part 1: Complement your VDI environment with NSX Part 2: Complement your VDI environment with NSX: dFW Part 3: Complement your VDI environment with NSX: IDFW Part 4: Complement your VDI environment with NSX: Introspection Services Part 5: Complement your VDI environment with NSX: IDS/IPS Part 6: Complement your VDI environment with NSX: Advanced Load Balancer The final post of this series will be around NSX IDS (Intrusion Detection System) and IPS (Intrusion Prevention System)." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://ulttransformer.github.io/posts/complement-your-vdi-environment-with-nsx/complement-your-vdi-environment-with-nsx-ids-ips/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2021-03-16T00:00:00+00:00" />
@@ -193,12 +193,12 @@
               col-md-10 col-md-offset-1
               post-container">
         <ul>
-<li>Part 1: Complement your VDI environment with NSX.</li>
-<li>Part 2: Complement your VDI environment with NSX: dFW.</li>
-<li>Part 3: Complement your VDI environment with NSX: IDFW.</li>
-<li>Part 4: Complement your VDI environment with NSX: Introspection Services.</li>
-<li>Part 5: Complement your VDI environment with NSX: IDS/IPS.</li>
-<li>Part 6: Complement your VDI environment with NSX: Advanced Load Balancer</li>
+<li><a href="https://www.ulttransformer.com/posts/complement-your-vdi-environment-with-nsx/complement-your-vdi-environment-with-nsx/" target="_blank">Part 1: Complement your VDI environment with NSX</a></li>
+<li><a href="https://www.ulttransformer.com/posts/complement-your-vdi-environment-with-nsx/complement-your-vdi-environment-with-nsx-dfw/" target="_blank">Part 2: Complement your VDI environment with NSX: dFW</a></li>
+<li><a href="https://www.ulttransformer.com/posts/complement-your-vdi-environment-with-nsx/complement-your-vdi-environment-with-nsx-idfw/" target="_blank">Part 3: Complement your VDI environment with NSX: IDFW</a></li>
+<li><a href="https://www.ulttransformer.com/posts/complement-your-vdi-environment-with-nsx/complement-your-vdi-environment-with-nsx-introspection-services/" target="_blank">Part 4: Complement your VDI environment with NSX: Introspection Services</a></li>
+<li><a href="https://www.ulttransformer.com/posts/complement-your-vdi-environment-with-nsx/complement-your-vdi-environment-with-nsx-ids-ips/" target="_blank">Part 5: Complement your VDI environment with NSX: IDS/IPS</a></li>
+<li><a href="https://www.ulttransformer.com/posts/complement-your-vdi-environment-with-nsx/complement-your-vdi-environment-with-nsx/" target="_blank">Part 6: Complement your VDI environment with NSX: Advanced Load Balancer</a></li>
 </ul>
 <p>The final post of this series will be around NSX IDS (Intrusion Detection System) and IPS (Intrusion Prevention System). Both these products are used to highlight attacks targetted around a VMware environment. While the dFW does a great job of providing zero trust access, what if someone tries to take advantage of that open access? This is the use case for IDS/IPS.</p>
 <p>IDS and IPS used to be included with NSX-T Enterprise Plus (correct me if I’m wrong). However as of NSX-T 3.1, the licensing model has changed and IDS and IPS have moved into an ATP (Advanced Threat Prevention) license, which does/will include products such as LastLine and BitFusion. I think it’s key to note that users of the ATP license will benefit from not only the IDS and IPS but a bunch of VMware security complements.</p>

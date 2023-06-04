@@ -10,15 +10,15 @@
     
   <title>Complement your VDI environment with NSX | UltTransformer</title>
   <meta name="author" content="Puppet">
-  <meta name="description" content="Part 1: Complement your VDI environment with NSX. Part 2: Complement your VDI environment with NSX: dFW. Part 3: Complement your VDI environment with NSX: IDFW. Part 4: Complement your VDI environment with NSX: Introspection Services. Part 5: Complement your VDI environment with NSX: IDS/IPS. Part 6: Complement your VDI environment with NSX: Advanced Load Balancer I started the series discussing the different features within NSX that can complement a VDI environment.">
+  <meta name="description" content="Part 1: Complement your VDI environment with NSX Part 2: Complement your VDI environment with NSX: dFW Part 3: Complement your VDI environment with NSX: IDFW Part 4: Complement your VDI environment with NSX: Introspection Services Part 5: Complement your VDI environment with NSX: IDS/IPS Part 6: Complement your VDI environment with NSX: Advanced Load Balancer I started the series discussing the different features within NSX that can complement a VDI environment.">
   <meta name="keywords" content="blog,developer,personal">
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Complement your VDI environment with NSX"/>
-<meta name="twitter:description" content="Part 1: Complement your VDI environment with NSX. Part 2: Complement your VDI environment with NSX: dFW. Part 3: Complement your VDI environment with NSX: IDFW. Part 4: Complement your VDI environment with NSX: Introspection Services. Part 5: Complement your VDI environment with NSX: IDS/IPS. Part 6: Complement your VDI environment with NSX: Advanced Load Balancer I started the series discussing the different features within NSX that can complement a VDI environment."/>
+<meta name="twitter:description" content="Part 1: Complement your VDI environment with NSX Part 2: Complement your VDI environment with NSX: dFW Part 3: Complement your VDI environment with NSX: IDFW Part 4: Complement your VDI environment with NSX: Introspection Services Part 5: Complement your VDI environment with NSX: IDS/IPS Part 6: Complement your VDI environment with NSX: Advanced Load Balancer I started the series discussing the different features within NSX that can complement a VDI environment."/>
 
   <meta property="og:title" content="Complement your VDI environment with NSX" />
-<meta property="og:description" content="Part 1: Complement your VDI environment with NSX. Part 2: Complement your VDI environment with NSX: dFW. Part 3: Complement your VDI environment with NSX: IDFW. Part 4: Complement your VDI environment with NSX: Introspection Services. Part 5: Complement your VDI environment with NSX: IDS/IPS. Part 6: Complement your VDI environment with NSX: Advanced Load Balancer I started the series discussing the different features within NSX that can complement a VDI environment." />
+<meta property="og:description" content="Part 1: Complement your VDI environment with NSX Part 2: Complement your VDI environment with NSX: dFW Part 3: Complement your VDI environment with NSX: IDFW Part 4: Complement your VDI environment with NSX: Introspection Services Part 5: Complement your VDI environment with NSX: IDS/IPS Part 6: Complement your VDI environment with NSX: Advanced Load Balancer I started the series discussing the different features within NSX that can complement a VDI environment." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://ulttransformer.github.io/posts/complement-your-vdi-environment-with-nsx/complement-your-vdi-environment-with-nsx-dfw/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2021-01-03T00:00:00+00:00" />
@@ -193,12 +193,12 @@
               col-md-10 col-md-offset-1
               post-container">
         <ul>
-<li>Part 1: Complement your VDI environment with NSX.</li>
-<li>Part 2: Complement your VDI environment with NSX: dFW.</li>
-<li>Part 3: Complement your VDI environment with NSX: IDFW.</li>
-<li>Part 4: Complement your VDI environment with NSX: Introspection Services.</li>
-<li>Part 5: Complement your VDI environment with NSX: IDS/IPS.</li>
-<li>Part 6: Complement your VDI environment with NSX: Advanced Load Balancer</li>
+<li><a href="https://www.ulttransformer.com/posts/complement-your-vdi-environment-with-nsx/complement-your-vdi-environment-with-nsx/" target="_blank">Part 1: Complement your VDI environment with NSX</a></li>
+<li><a href="https://www.ulttransformer.com/posts/complement-your-vdi-environment-with-nsx/complement-your-vdi-environment-with-nsx-dfw/" target="_blank">Part 2: Complement your VDI environment with NSX: dFW</a></li>
+<li><a href="https://www.ulttransformer.com/posts/complement-your-vdi-environment-with-nsx/complement-your-vdi-environment-with-nsx-idfw/" target="_blank">Part 3: Complement your VDI environment with NSX: IDFW</a></li>
+<li><a href="https://www.ulttransformer.com/posts/complement-your-vdi-environment-with-nsx/complement-your-vdi-environment-with-nsx-introspection-services/" target="_blank">Part 4: Complement your VDI environment with NSX: Introspection Services</a></li>
+<li><a href="https://www.ulttransformer.com/posts/complement-your-vdi-environment-with-nsx/complement-your-vdi-environment-with-nsx-ids-ips/" target="_blank">Part 5: Complement your VDI environment with NSX: IDS/IPS</a></li>
+<li><a href="https://www.ulttransformer.com/posts/complement-your-vdi-environment-with-nsx/complement-your-vdi-environment-with-nsx/" target="_blank">Part 6: Complement your VDI environment with NSX: Advanced Load Balancer</a></li>
 </ul>
 <p>I started the series discussing the different features within NSX that can complement a VDI environment. I’ll focus on dFW today, a well-known NSX feature.</p>
 <h3 id="recap-eastwest-traffic-between-vdis">Recap: East/West Traffic between VDI’s<a class="anchorjs-link" href="#recap-eastwest-traffic-between-vdis"></a></h3><p>dFW, one of NSX’s well known and most marketable features, with good reason. Many attacks don’t target the motherload first time, but rather something lightly protected (think webserver) and then move laterally within the DC to something of better value (think DB). dFW with a zero-trust model alleviates this issue with Firewall instances running on each of the VM vNICs.</p>
@@ -208,21 +208,21 @@
 <p>I’ll start by creating a group called NTP Servers and manually assign the NTP VMs into the groups.</p>
 <p><figure>
   <a class="paragraph-image">
-    <img data-src="https://vmusketeers.com/wp-content/uploads/2020/12/NTP_VM-1024x311.png" data-action="zoom" alt="NTP Server"  class="lazyload">
+    <img data-src="/img/complement-your-vdi-environment-with-nsx/dfw-ntp.png" data-action="zoom" alt="NTP Server"  class="lazyload">
   </a>
   
 </figure></p>
 <p>Secondly, I will group the DNS servers together, using a more dynamic method, VM name containing the word “dns”. This will pickup my two (2) DNS servers.</p>
 <p><figure>
   <a class="paragraph-image">
-    <img data-src="https://vmusketeers.com/wp-content/uploads/2020/12/DNS_VM_Name-1024x288.png" data-action="zoom" alt="DNS Server"  class="lazyload">
+    <img data-src="/img/complement-your-vdi-environment-with-nsx/dfw-dns.png" data-action="zoom" alt="DNS Server"  class="lazyload">
   </a>
   
 </figure></p>
 <p>Finally, I will use tagging. Previously I created tags within NSX and assigned them to my AD Servers. My group then assigns any VM with this tag into the group.</p>
 <p><figure>
   <a class="paragraph-image">
-    <img data-src="https://vmusketeers.com/wp-content/uploads/2020/12/Screen-Shot-2020-12-22-at-16.53.43-1024x311.png" data-action="zoom" alt="AD Servers"  class="lazyload">
+    <img data-src="/img/complement-your-vdi-environment-with-nsx/dfw-ad.png" data-action="zoom" alt="AD Servers"  class="lazyload">
   </a>
   
 </figure></p>
@@ -238,7 +238,7 @@
 </ul>
 <p><figure>
   <a class="paragraph-image">
-    <img data-src="https://vmusketeers.com/wp-content/uploads/2020/12/Categories.png" data-action="zoom" alt="dFW"  class="lazyload">
+    <img data-src="/img/complement-your-vdi-environment-with-nsx/dfw-categories.png" data-action="zoom" alt="Categories"  class="lazyload">
   </a>
   
 </figure></p>
@@ -248,14 +248,14 @@
 <p>To start, I want to create policies, which used to be called sections. I’ve created a section within Infrastructure for my core applications, NTP, DNS and Active Directory.</p>
 <p><figure>
   <a class="paragraph-image">
-    <img data-src="https://vmusketeers.com/wp-content/uploads/2020/12/Policies-1024x278.png" data-action="zoom" alt="Categories"  class="lazyload">
+    <img data-src="/img/complement-your-vdi-environment-with-nsx/dfw-category-rules.png" data-action="zoom" alt="Categories"  class="lazyload">
   </a>
   
 </figure></p>
 <p>Within each of the policies, I have applied rules. Each rule is specific to the infrastructure component listed in the policy heading.</p>
 <p><figure>
   <a class="paragraph-image">
-    <img data-src="https://vmusketeers.com/wp-content/uploads/2020/12/Rules-1024x373.png" data-action="zoom" alt="Categories Detailed"  class="lazyload">
+    <img data-src="/img/complement-your-vdi-environment-with-nsx/dfw-category-rules-expanded.png" data-action="zoom" alt="Categories Detailed"  class="lazyload">
   </a>
   
 </figure></p>
@@ -264,13 +264,12 @@
 <h3 id="url-filtering">URL Filtering<a class="anchorjs-link" href="#url-filtering"></a></h3><p>URL filtering is something I wanted to cover in this part of the series, especially since my focus is VDI. Within the dFW rules, you are able to allow or deny traffic based on the destination URL. In the example below I have created a VDI to any rule utilising the HTTPS service. What’s great about this rule, aside from the apply to field being set, is the use of the context profile. Within the context profile, I have specified “mail.google.com”. Assuming my users need to reach their email accounts which I hold in google.</p>
 <p><figure>
   <a class="paragraph-image">
-    <img data-src="https://vmusketeers.com/wp-content/uploads/2020/12/Google-Mail-1-1024x278.png" data-action="zoom" alt="URL Filtering"  class="lazyload">
+    <img data-src="/img/complement-your-vdi-environment-with-nsx/dfw-url-filtering.png" data-action="zoom" alt="URL Filtering"  class="lazyload">
   </a>
   
 </figure></p>
 <p>The placement of this rule was within the “Application” category and “VDI outbound” policy. Operationally this should be easy to locate, should it need amending.</p>
-<p>Automate using Terraform</p>
-<p><a href="http://www.cloudxtreme.info/configure-a-a-tier-0-with-tier-1-and-3-tier-app-topology-with-terraform/" target="_blank">Raymond de Jong</a> has a terrific Terraform post covering security and other NSX-T elements. I can’t recommend this post enough!</p>
+<h3 id="automate-using-terraform">Automate using Terraform<a class="anchorjs-link" href="#automate-using-terraform"></a></h3><p><a href="http://www.cloudxtreme.info/configure-a-a-tier-0-with-tier-1-and-3-tier-app-topology-with-terraform/" target="_blank">Raymond de Jong</a> has a terrific Terraform post covering security and other NSX-T elements. I can’t recommend this post enough!</p>
 <p>Security Groups:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span>resource &#34;nsxt_policy_group&#34; &#34;ntp_servers&#34; {
 </span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>  display_name = &#34;NTP Servers&#34;

@@ -198,7 +198,7 @@ I used the Avi API guide for reference: https://avinetworks." />
               col-lg-8 col-lg-offset-2
               col-md-10 col-md-offset-1
               post-container">
-        <h3 id="api-reference">API Reference<a class="anchorjs-link" href="#api-reference"></a></h3><p>I wrote a <a href="https://vmusketeers.com/2020/05/24/avi-networks-base-configuration/" target="_blank">post</a> a few weeks back on how to get an Avi proof of concept up and running. Hopefully, it helped and continues to help others wanting to start playing with Avi.</p>
+        <h3 id="api-reference">API Reference<a class="anchorjs-link" href="#api-reference"></a></h3><p>I wrote a <a href="https://www.ulttransformer.com/posts/avi-networks-alb/avi-networks-base-configuration/" target="_blank">post</a> a few weeks back on how to get an Avi proof of concept up and running. Hopefully, it helped and continues to help others wanting to start playing with Avi.</p>
 <p>I like to spin my lab up and down, pushing config when needed. This post will be focused around the Avi APIs and how to stand up the basic configuration previously discussed.</p>
 <p>I used the Avi API guide for reference:
 <a href="https://avinetworks.com/docs/latest/" target="_blank">https://avinetworks.com/docs/latest/</a></p>
@@ -210,12 +210,11 @@ https://{Avi Controller IP}/api</p>
 <p>My Pool members will be 172.16.1.21, 172.16.1.22 and 172.16.1.23. Running an HTTP service.</p>
 <p><figure>
   <a class="paragraph-image">
-    <img data-src="https://vmusketeers.com/wp-content/uploads/2020/06/Screenshot-2020-06-19-at-12.03.04.png" data-action="zoom" alt="Logical Diagram"  class="lazyload">
+    <img data-src="/img/avi-networks-base-configuration/logical-diagram.png" data-action="zoom" alt="Logical Diagram"  class="lazyload">
   </a>
   
 </figure></p>
-<p>###Prerequisites</p>
-<p>You will need a few API calls to learn the Cloud ID and the Network ID used in the later examples.</p>
+<h3 id="prerequisites">Prerequisites<a class="anchorjs-link" href="#prerequisites"></a></h3><p>You will need a few API calls to learn the Cloud ID and the Network ID used in the later examples.</p>
 <p>https://{Avi Controller IP}/api/cloud</p>
 <p>https://{Avi Controller IP}/api/network</p>
 <h3 id="authentication">Authentication<a class="anchorjs-link" href="#authentication"></a></h3><p>There are 2 types of authentication when using Avi APIs. The fist is token-based and the second is basic authentication.</p>
