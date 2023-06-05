@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cilium on UltTransformer</title>
+    <link>https://ulttransformer.github.io/tags/cilium/</link>
+    <description>Recent content in Cilium on UltTransformer</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 01 Jun 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://ulttransformer.github.io/tags/cilium/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>K3s with Cilium Install</title>
+      <link>https://ulttransformer.github.io/posts/cilium/k3s-with-cilium-install/</link>
+      <pubDate>Thu, 01 Jun 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ulttransformer.github.io/posts/cilium/k3s-with-cilium-install/</guid>
+      <description>1wget https://raw.githubusercontent.com/UltTransformer/demo/main/k8s/k3s/k3-install-single-node-part1.sh 2wget https://raw.githubusercontent.com/UltTransformer/demo/main/k8s/k3s/k3-install-single-node-part2.sh 3wget https://raw.githubusercontent.com/UltTransformer/demo/main/k8s/k3s/k3-install-single-node-on-reboot.sh 4chmod 111 k3-install-single-node-part1.sh 5chmod 111 k3-install-single-node-part2.sh 6chmod 111 k3-install-single-node-on-reboot.sh 7./k3-install-single-node-part1.sh Wait for the system to reboot and log back in and execute the next script.
+1./k3-install-single-node-part2.sh If the system reboots at any stage you will need to re-point the environmental variable using the follow command:
+1export KUBECONFIG=/etc/rancher/k3s/k3s.yaml </description>
+    </item>
+    
+  </channel>
+</rss>

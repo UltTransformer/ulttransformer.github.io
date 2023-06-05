@@ -6,7 +6,18 @@
     <description>Recent content on UltTransformer</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 01 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://ulttransformer.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 01 Jun 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://ulttransformer.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>K3s with Cilium Install</title>
+      <link>https://ulttransformer.github.io/posts/cilium/k3s-with-cilium-install/</link>
+      <pubDate>Thu, 01 Jun 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ulttransformer.github.io/posts/cilium/k3s-with-cilium-install/</guid>
+      <description>1wget https://raw.githubusercontent.com/UltTransformer/demo/main/k8s/k3s/k3-install-single-node-part1.sh 2wget https://raw.githubusercontent.com/UltTransformer/demo/main/k8s/k3s/k3-install-single-node-part2.sh 3wget https://raw.githubusercontent.com/UltTransformer/demo/main/k8s/k3s/k3-install-single-node-on-reboot.sh 4chmod 111 k3-install-single-node-part1.sh 5chmod 111 k3-install-single-node-part2.sh 6chmod 111 k3-install-single-node-on-reboot.sh 7./k3-install-single-node-part1.sh Wait for the system to reboot and log back in and execute the next script.
+1./k3-install-single-node-part2.sh If the system reboots at any stage you will need to re-point the environmental variable using the follow command:
+1export KUBECONFIG=/etc/rancher/k3s/k3s.yaml </description>
+    </item>
+    
     <item>
       <title>Chris&#39; Corner - May 2023</title>
       <link>https://ulttransformer.github.io/posts/env0/chris-corner-may-2023/</link>

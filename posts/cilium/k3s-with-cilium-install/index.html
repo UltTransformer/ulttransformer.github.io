@@ -8,24 +8,27 @@
 
   
     
-  <title>VCDX-NV | UltTransformer</title>
+  <title>K3s with Cilium Install | UltTransformer</title>
   <meta name="author" content="Puppet">
-  <meta name="description" content="Due to the virus outbreak, my VCDX defence has been postponed until the next window, which is June. The VCDX board decided, understandably, to keep their panellists and applicants as safe as possible. That said, I thought I’d continue the blogging trend and discuss another area of preparation.
-Still excited as 3 months will fly by! I’ve discussed the document and design defence. Now let’s look at the defence scenario.">
+  <meta name="description" content="1wget https://raw.githubusercontent.com/UltTransformer/demo/main/k8s/k3s/k3-install-single-node-part1.sh 2wget https://raw.githubusercontent.com/UltTransformer/demo/main/k8s/k3s/k3-install-single-node-part2.sh 3wget https://raw.githubusercontent.com/UltTransformer/demo/main/k8s/k3s/k3-install-single-node-on-reboot.sh 4chmod 111 k3-install-single-node-part1.sh 5chmod 111 k3-install-single-node-part2.sh 6chmod 111 k3-install-single-node-on-reboot.sh 7./k3-install-single-node-part1.sh Wait for the system to reboot and log back in and execute the next script.
+1./k3-install-single-node-part2.sh If the system reboots at any stage you will need to re-point the environmental variable using the follow command:
+1export KUBECONFIG=/etc/rancher/k3s/k3s.yaml ">
   <meta name="keywords" content="blog,developer,personal">
 
   <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="VCDX-NV"/>
-<meta name="twitter:description" content="Due to the virus outbreak, my VCDX defence has been postponed until the next window, which is June. The VCDX board decided, understandably, to keep their panellists and applicants as safe as possible. That said, I thought I’d continue the blogging trend and discuss another area of preparation.
-Still excited as 3 months will fly by! I’ve discussed the document and design defence. Now let’s look at the defence scenario."/>
+<meta name="twitter:title" content="K3s with Cilium Install"/>
+<meta name="twitter:description" content="1wget https://raw.githubusercontent.com/UltTransformer/demo/main/k8s/k3s/k3-install-single-node-part1.sh 2wget https://raw.githubusercontent.com/UltTransformer/demo/main/k8s/k3s/k3-install-single-node-part2.sh 3wget https://raw.githubusercontent.com/UltTransformer/demo/main/k8s/k3s/k3-install-single-node-on-reboot.sh 4chmod 111 k3-install-single-node-part1.sh 5chmod 111 k3-install-single-node-part2.sh 6chmod 111 k3-install-single-node-on-reboot.sh 7./k3-install-single-node-part1.sh Wait for the system to reboot and log back in and execute the next script.
+1./k3-install-single-node-part2.sh If the system reboots at any stage you will need to re-point the environmental variable using the follow command:
+1export KUBECONFIG=/etc/rancher/k3s/k3s.yaml "/>
 
-  <meta property="og:title" content="VCDX-NV" />
-<meta property="og:description" content="Due to the virus outbreak, my VCDX defence has been postponed until the next window, which is June. The VCDX board decided, understandably, to keep their panellists and applicants as safe as possible. That said, I thought I’d continue the blogging trend and discuss another area of preparation.
-Still excited as 3 months will fly by! I’ve discussed the document and design defence. Now let’s look at the defence scenario." />
+  <meta property="og:title" content="K3s with Cilium Install" />
+<meta property="og:description" content="1wget https://raw.githubusercontent.com/UltTransformer/demo/main/k8s/k3s/k3-install-single-node-part1.sh 2wget https://raw.githubusercontent.com/UltTransformer/demo/main/k8s/k3s/k3-install-single-node-part2.sh 3wget https://raw.githubusercontent.com/UltTransformer/demo/main/k8s/k3s/k3-install-single-node-on-reboot.sh 4chmod 111 k3-install-single-node-part1.sh 5chmod 111 k3-install-single-node-part2.sh 6chmod 111 k3-install-single-node-on-reboot.sh 7./k3-install-single-node-part1.sh Wait for the system to reboot and log back in and execute the next script.
+1./k3-install-single-node-part2.sh If the system reboots at any stage you will need to re-point the environmental variable using the follow command:
+1export KUBECONFIG=/etc/rancher/k3s/k3s.yaml " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://ulttransformer.github.io/posts/vcdx/vcdx-nv-defence-scenario/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2020-03-20T00:00:00+00:00" />
-<meta property="article:modified_time" content="2020-03-20T00:00:00+00:00" />
+<meta property="og:url" content="https://ulttransformer.github.io/posts/cilium/k3s-with-cilium-install/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-06-01T00:00:00+00:00" />
+<meta property="article:modified_time" content="2023-06-01T00:00:00+00:00" />
 
   <link rel="stylesheet" href="/css/bootstrap.min.css"  crossorigin="anonymous">
   
@@ -167,14 +170,14 @@ Still excited as 3 months will fly by! I’ve discussed the document and design 
         <div class="post-heading">
           <div class="tags">
             
-            <a class="tag" href="/tags/vcdx/" title="VCDX">VCDX</a>
+            <a class="tag" href="/tags/cilium/" title="Cilium">Cilium</a>
             
           </div>
-          <h1>VCDX-NV</h1>
-          <h2 class="subheading">Defence Scenario</h2>
+          <h1>K3s with Cilium Install</h1>
+          <h2 class="subheading">.</h2>
           <span class="meta">
             Posted by  Chris Noon 
-            on Fri, Mar 20, 2020
+            on Thu, Jun 1, 2023
           </span>
         </div>
       </div>
@@ -195,38 +198,29 @@ Still excited as 3 months will fly by! I’ve discussed the document and design 
               col-lg-8 col-lg-offset-2
               col-md-10 col-md-offset-1
               post-container">
-        <p>Due to the virus outbreak, my VCDX defence has been postponed until the next window, which is June. The VCDX board decided, understandably, to keep their panellists and applicants as safe as possible. That said, I thought I’d continue the blogging trend and discuss another area of preparation.</p>
-<p>Still excited as 3 months will fly by! I’ve discussed the <a href="https://www.ulttransformer.com/posts/vcdx/vcdx-nv-document-submission/" target="_blank">document</a> and <a href="https://www.ulttransformer.com/posts/vcdx/vcdx-nv-design-defence/" target="_blank">design defence</a>. Now let’s look at the defence scenario.</p>
-<h3 id="what-is-the-defence-scenario">What is the Defence Scenario?<a class="anchorjs-link" href="#what-is-the-defence-scenario"></a></h3><p>The defence scenario is 1 of 2 defences I will have to complete to successfully become a VCDX. The first task is the design defence, which I’ve spoken about here. The second is the defence scenario. This is a 45-minute window where my 3 panellists will create a scenario, to test my architecture skills.</p>
-<p>So how am I preparing?</p>
-<h3 id="know-your-subject">Know your subject<a class="anchorjs-link" href="#know-your-subject"></a></h3><p>I am gunning for the VCDX-NV (Network Virtualization) and my submitted design is using NSX-v. Therefore the defence scenario will be focusing on NSX-v technologies. My design document and my design defence would have covered off a number of NSX-v areas, touching on multiple pillars in the blueprint. So, is it reasonable to assume, the lighter or untouched areas in my design will not be the focal point of the scenario… I think so. Know your subject in its entirety, not just the elements that are covered in your project.</p>
-<h3 id="create-a-methodology">Create a methodology<a class="anchorjs-link" href="#create-a-methodology"></a></h3><p>There are numerous blogs out there which recommend different ways to tackle the defence scenario. The advice I have been given is; “Do what feels most natural to you”. While I like the advice, I wanted to meet in the middle, I wanted to use a methodology that spoke to me. So I have borrowed Abdullah’s (and Larus’) methodologies. Both are the same conceptually, however, Adbullah’s is written focusing on NV and Larus is focusing on DCV.</p>
-<p>Abdullah Abdullah – <a href="https://notes.doodzzz.net/2018/06/08/vcdx-nv-design-scenario-youre-the-river-and-youre-the-raft/" target="_blank">https://notes.doodzzz.net/2018/06/08/vcdx-nv-design-scenario-youre-the-river-and-youre-the-raft/</a></p>
-<p>Larus Hjartarson – <a href="https://vmice.net/2015/10/vcdx-design-scenario/" target="_blank">https://vmice.net/2015/10/vcdx-design-scenario/</a></p>
-<p>In short, these methodologies split the board up into 3 sections. 1 for the conceptual design, 1 for the logical design and (usually the centre) the design decisions/diagram(s). When I read both these blogs; it instantly clicked, their brain works like mine, so this is my methodology.</p>
-<h3 id="mock-mock-and-mock-some-more">Mock, mock and mock some more<a class="anchorjs-link" href="#mock-mock-and-mock-some-more"></a></h3><p>Nothing beats good old fashion practice. The best shooter on the team is always the one that has the most repetitions. Mock design scenario’s with a number of audiences. I’ve mocked with DCV’s, NV’s and some dual VCDX’s. There have been some nightmare scenarios and some catastrophic showings, but I am improving. At the start, this knocked my confidence and I’ve had to pick myself up or have others pick me up. It’s important to keep working! A variety of audiences has helped, with each of them coming up with different scenarios and different questions. Even having different personalities and a few troublemakers as helped prepare me for “anything”.</p>
-<h3 id="my-schedule">My schedule<a class="anchorjs-link" href="#my-schedule"></a></h3><p>I’ve started scenario mocking in mid-January and have done 1 a fortnight until the end of February. As my defence has been postponed, I’ll perform one scenario a fortnight until closer to the June date, where I’ll ramp up. I feel it’s important to keep my foot on the gas and while I won’t be flat out for 3 months, my VCDX preparation won’t stop.</p>
-<p>As with the last 2 posts, remember, no VCDX number, so please don’t take this as gospel.</p>
-<p>Wish me luck!</p>
-
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>wget https://raw.githubusercontent.com/UltTransformer/demo/main/k8s/k3s/k3-install-single-node-part1.sh
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>wget https://raw.githubusercontent.com/UltTransformer/demo/main/k8s/k3s/k3-install-single-node-part2.sh
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>wget https://raw.githubusercontent.com/UltTransformer/demo/main/k8s/k3s/k3-install-single-node-on-reboot.sh
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>chmod 111 k3-install-single-node-part1.sh
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span>chmod 111 k3-install-single-node-part2.sh
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span><span>chmod 111 k3-install-single-node-on-reboot.sh
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span><span>./k3-install-single-node-part1.sh
+</span></span></code></pre></div><p>Wait for the system to reboot and log back in and execute the next script.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>./k3-install-single-node-part2.sh
+</span></span></code></pre></div><p>If the system reboots at any stage you will need to re-point the environmental variable using the follow command:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>export KUBECONFIG=/etc/rancher/k3s/k3s.yaml
+</span></span></code></pre></div>
 
         <hr style="visibility: hidden;" />
         <ul class="pager">
           
           <li class="previous">
-            <a href="/posts/vcdx/vcdx-nv-design-defence/" data-toggle="tooltip" data-placement="top" title="VCDX-NV">
+            <a href="/posts/env0/chris-corner-may-2023/" data-toggle="tooltip" data-placement="top" title="Chris&#39; Corner - May 2023">
               Previous<br>
-              <span>VCDX-NV</span>
+              <span>Chris&#39; Corner - May 2023</span>
             </a>
           </li>
           
-          
-          <li class="next">
-            <a href="/posts/avi-networks-alb/avi-networks-the-advanced-nsx-load-balancer/" data-toggle="tooltip" data-placement="top" title="Avi Networks | NSX ALB">
-              Next<br>
-              <span>Avi Networks | NSX ALB</span>
-            </a>
-          </li>
           
         </ul>
         <hr style="visibility: hidden;" />
