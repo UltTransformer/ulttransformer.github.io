@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  
+    
+  <title>Advanced Networking with Kubernetes on AWS by A Cloud Guru | UltTransformer</title>
+  <meta name="author" content="Puppet">
+  <meta name="description" content="The K8s Advanced Networking course by A Cloud Guru is fantastic, as one would expect from one of the leading Cloud education tools. It focuses on AWS EKS and has clear and concise explanations, with labs where appropriate to get some hands-on experience.
+While I thoroughly enjoyed the course and the labs, I would have liked a bit more depth and discussion around the design decisions. The concepts are always explained from a high-level, occasionally low level, but to truly understand EKS Networking, further exploration is required.">
+  <meta name="keywords" content="blog,developer,personal">
+
+  <meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://ulttransformer.com/img/blogs.jpeg"/>
+
+<meta name="twitter:title" content="Advanced Networking with Kubernetes on AWS by A Cloud Guru"/>
+<meta name="twitter:description" content="The K8s Advanced Networking course by A Cloud Guru is fantastic, as one would expect from one of the leading Cloud education tools. It focuses on AWS EKS and has clear and concise explanations, with labs where appropriate to get some hands-on experience.
+While I thoroughly enjoyed the course and the labs, I would have liked a bit more depth and discussion around the design decisions. The concepts are always explained from a high-level, occasionally low level, but to truly understand EKS Networking, further exploration is required."/>
+
+  <meta property="og:title" content="Advanced Networking with Kubernetes on AWS by A Cloud Guru" />
+<meta property="og:description" content="The K8s Advanced Networking course by A Cloud Guru is fantastic, as one would expect from one of the leading Cloud education tools. It focuses on AWS EKS and has clear and concise explanations, with labs where appropriate to get some hands-on experience.
+While I thoroughly enjoyed the course and the labs, I would have liked a bit more depth and discussion around the design decisions. The concepts are always explained from a high-level, occasionally low level, but to truly understand EKS Networking, further exploration is required." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://ulttransformer.com/posts/cilium/advanced-networking-with-kubernetes-on-aws-by-a-cloud-guru/" /><meta property="og:image" content="https://ulttransformer.com/img/blogs.jpeg" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-08-08T00:00:00+00:00" />
+<meta property="article:modified_time" content="2023-08-08T00:00:00+00:00" />
+
+  <link rel="stylesheet" href="/css/bootstrap.min.css"  crossorigin="anonymous">
+  
+  <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/all.min.css" rel="stylesheet" type="text/css">
+
+  <link rel="stylesheet" href="/sass/main.css">
+
+  <link rel="stylesheet" href="/zoomjs/zoom.min.css">
+
+  <script src=/js/lazysizes.min.js></script>
+
+  
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="shortcut icon" href="/favicon.png" type="image/x-icon">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/logo.svg" sizes="any" type="image/svg+xml" />
+
+
+</head>
+
+
+
+<body ontouchstart="">
+  <nav class="navbar navbar-default navbar-custom navbar-fixed-top ">
+  <div class="container-fluid">
+    
+    <div class="navbar-header page-scroll">
+      <button type="button" class="navbar-toggle">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://ulttransformer.com">UltTransformer</a>
+    </div>
+    
+    <div id="huxblog_navbar">
+      <div class="navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          
+          <li><a href="/" title="Home">Home</a></li>
+          
+          <li><a href="/posts/" title="Posts">Posts</a></li>
+          
+          <li><a href="/about/" title="About">About</a></li>
+          
+
+          <li class="search-icon">
+            <a href="javascript:void(0)">
+              <i class="fa fa-search"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    
+  </div>
+  
+</nav>
+<script>
+  
+  
+  
+  var $body = document.body;
+  var $toggle = document.querySelector(".navbar-toggle");
+  var $navbar = document.querySelector("#huxblog_navbar");
+  var $collapse = document.querySelector(".navbar-collapse");
+
+  var __HuxNav__ = {
+    close: function () {
+      $navbar.className = " ";
+      
+      setTimeout(function () {
+        
+        if ($navbar.className.indexOf("in") < 0) {
+          $collapse.style.height = "0px";
+        }
+      }, 400);
+    },
+    open: function () {
+      $collapse.style.height = "auto";
+      $navbar.className += " in";
+    },
+  };
+
+  
+  $toggle.addEventListener("click", function (e) {
+    if ($navbar.className.indexOf("in") > 0) {
+      __HuxNav__.close();
+    } else {
+      __HuxNav__.open();
+    }
+  });
+
+  
+
+  document.addEventListener("click", function (e) {
+    if (e.target == $toggle) return;
+    if (e.target.className == "icon-bar") return;
+    __HuxNav__.close();
+  });
+</script>
+  
+<div class="search-page">
+  <div class="search-icon-close-container">
+    <span class="search-icon-close">
+      <i class="fa fa-chevron-down"></i>
+    </span>
+  </div>
+  <div class="search-main container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <form></form>
+        <input type="text" id="search-input" placeholder="$ grep...">
+        </form>
+        <div id="search-results" class="mini-post-list"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  
+  
+
+
+<style type="text/css">
+  header.intro-header {
+    position: relative;
+    background-image: url('/img/blogs.jpeg');
+  }
+</style>
+
+<header class="intro-header ">
+
+  <div class="header-mask"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="post-heading">
+          <div class="tags">
+            
+            <a class="tag" href="/tags/cilium/" title="Cilium">Cilium</a>
+            
+          </div>
+          <h1>Advanced Networking with Kubernetes on AWS by A Cloud Guru</h1>
+          <h2 class="subheading">A review of the course, highlighting key learnings.</h2>
+          <span class="meta">
+            Posted by  Chris Noon 
+            on Tue, Aug 8, 2023
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+  
+
+
+<article>
+  <div class="container">
+    <div class="row">
+
+      
+      <div class="
+              col-lg-8 col-lg-offset-2
+              col-md-10 col-md-offset-1
+              post-container">
+        <p>The <a href="https://learn.acloud.guru/course/advanced-networking-with-kubernetes-for-aws/overview" target="_blank">K8s Advanced Networking course by A Cloud Guru</a> is fantastic, as one would expect from one of the leading Cloud education tools.  It focuses on AWS EKS and has clear and concise explanations, with labs where appropriate to get some hands-on experience.</p>
+<p>While I thoroughly enjoyed the course and the labs, I would have liked a bit more depth and discussion around the design decisions.  The concepts are always explained from a high-level, occasionally low level, but to truly understand EKS Networking, further exploration is required.</p>
+<h3 id="what-will-you-learn">What will you learn?<a class="anchorjs-link" href="#what-will-you-learn"></a></h3><p>The chapters are well-designed, focusing around; Container Networking, K8s Networking, Ingres &amp; Egress Concepts (accessing the cluster Network), and AWS Networking &amp; K8s.  A lot of the course is not EKS specific and the general concepts of K8s Networking are explained throughout.  There are instances where EKS specifics are explained, for example when ENI’s or ALB’s are used.</p>
+<p>If you are an experienced Network Engineer/Architect with a little K8s experience, I would skip the first chapter, “Introduction”.  It’s short, so a recap doesn’t hurt, but it’s not required.</p>
+<p>The idea of the next few sections is to cover key learnings from each of the chapters.</p>
+<h3 id="container-networking">Container Networking<a class="anchorjs-link" href="#container-networking"></a></h3><p>The chapter gives an overview of container Networking without K8s coming into the conversation.  General container Networking concepts are discussed using Docker, which is then used in later chapters as the container orchestrator for K8s.</p>
+<p>The section I most enjoyed was eBFP.  I had some exposure to eBPF before taking this course, but it never fails to fascinate me how it helps in multiple areas of Networking.  By having eBPF processes run in the kernel rather than user space can drastically increase performance and security.  Truely amazing stuff!</p>
+<h3 id="k8s-networking">K8s Networking<a class="anchorjs-link" href="#k8s-networking"></a></h3><p>I was happy to see K8s CNI’s and more importantly Cilium uses VXLAN or Geneve to establish tunnels.  This is a core concept in most data center fabrics these days, especially good for me as a (former) VMware NSX SME where VXLAN and Geneve are core components in the SDN offering.</p>
+<p>One of the key learnings is around K8s DNS resolution, which is covered in this chapter and subsequently used throughout the other sections.  I think it’s important to grasp the core concepts at this stage before moving on and understanding how it integrates with pods and services.</p>
+<h3 id="accessing-the-cluster-networks">Accessing the Cluster Networks<a class="anchorjs-link" href="#accessing-the-cluster-networks"></a></h3><p>If you are comfortable with Load Balancing concepts, this section shouldn’t be too difficult to pick up.  I say, not too difficult because the core concepts of Load Balancing or load sharing are used, but there are several flavors to understand.</p>
+<ul>
+<li>Cluster IP - A K8s internal IP addresses that allows internal Pods to reach an internal service.  This is not exposed to the Internet (unless using a Proxy).</li>
+<li>Nodes ports - Exposing a UDP/TCP port (30000–32767) on each Node (VM) in the cluster that forwards to a Pod on a different port (e.g. 8080).</li>
+<li>Headless - Load sharing achieved by providing multiple DNS records to the users.</li>
+<li>Load Balancer - Standard Load Balancing theories apply here.  An ALB would be used in AWS to expose the services running on K8s.</li>
+<li>Ingress - Layer 7 Load Balancer that allows forward on sub-domains and URI’s.</li>
+</ul>
+<p>I really liked <a href="https://medium.com/google-cloud/kubernetes-nodeport-vs-loadbalancer-vs-ingress-when-should-i-use-what-922f010849e0" target="_blank">Sandeep Dinesh’s article</a> on the connectivity types.  Not only because it explains the connectivity type, but it gives you scenarios where each usecase fits best.  Warning it is GCP/GKE specific.</p>
+<p>All this ends with a quick review of Service Meshes, which I enjoyed.</p>
+<h3 id="aws-networking--k8s">AWS Networking &amp; K8s<a class="anchorjs-link" href="#aws-networking--k8s"></a></h3><p>The final chapter is very AWS centric, looking at the VPC CNI, EKS, and ALB configuration within AWS.  It’s a lovely way to review all of the concepts you learned through the course with AWS specific services.</p>
+
+
+        <hr style="visibility: hidden;" />
+        <ul class="pager">
+          
+          <li class="previous">
+            <a href="/posts/cilium/k8s-cilium-study-guide/" data-toggle="tooltip" data-placement="top" title="K8s &amp; Cilium Study Guide">
+              Previous<br>
+              <span>K8s &amp; Cilium Study Guide</span>
+            </a>
+          </li>
+          
+          
+        </ul>
+        <hr style="visibility: hidden;" />
+
+        
+        
+
+
+
+
+
+
+      </div>
+
+      
+      
+      
+      
+      <div class="
+              col-lg-8 col-lg-offset-2
+              col-md-10 col-md-offset-1
+              sidebar-container">
+
+        
+        
+        <section>
+  
+  
+  <hr class="hidden-sm hidden-xs">
+  
+  <h5>FEATURED TAGS</h5>
+  <div class="tags">
+    
+    <a href="/tags/cilium/">Cilium</a>
+    
+    <a href="/tags/env0/">env0</a>
+    
+    <a href="/tags/nsx/">NSX</a>
+    
+    <a href="/tags/vcdx/">VCDX</a>
+    
+  </div>
+</section>
+
+        
+        
+
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+  
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        
+        <ul class="list-inline text-center">
+
+<li>
+  <a href="https://github.com/UltTransformer" target="_blank">
+    <span class="fa-stack fa-lg">
+      <i class="fa fa-circle fa-stack-2x"></i>
+      <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+    </span>
+  </a>
+</li>
+
+<li>
+  <a href="https://linkedin.com/in/chrisgrahamnoon" target="_blank">
+    <span class="fa-stack fa-lg">
+      <i class="fa fa-circle fa-stack-2x"></i>
+      <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+    </span>
+  </a>
+</li>
+
+<li>
+  <a href="https://twitter.com/UltTransformer" target="_blank">
+    <span class="fa-stack fa-lg">
+      <i class="fa fa-circle fa-stack-2x"></i>
+      <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+    </span>
+  </a>
+</li>
+
+
+<li>
+  <a href="/index.xml" target="_blank">
+    <span class="fa-stack fa-lg">
+      <i class="fa fa-circle fa-stack-2x"></i>
+      <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+    </span>
+  </a>
+</li></ul>
+
+        <p class="copyright text-muted">
+          Copyright &copy; UltTransformer 2023  
+          <br>
+          Powered by <a href="https://gohugo.io">Hugo</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src=/js/jquery.min.js></script>
+<script src=/js/bootstrap.min.js crossorigin="anonymous"></script>
+
+
+
+<script src="/js/hux-blog.min.c4ea77041cd3edbfc8b2622cd887a9a5d8760a4162d14489e36d2a3fa4c90172.js"></script>
+
+
+<script src=/js/simple-jekyll-search.min.js></script>
+
+
+<script src="/js/search.min.53bce5da475b4d362500e5ce5dddfa22e20e1b9018777411d2020b4b839c9310.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="/zoomjs/zoom.min.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  
+    
+  <title>Chris&#39; Corner - March 2023 | UltTransformer</title>
+  <meta name="author" content="Puppet">
+  <meta name="description" content="Note: This is a copy of my env0 post.
+IntroductionThe development within the env0 platform is fantastic, one of the many reasons I love working here. The features come thick and fast and this is the motivation behind this monthly blog, to highlight the latest features and showcase Chris’ favorites.
+If you want to keep up to date with the features as they are released, follow the changelog.
+So far in 2023, we’ve released the following features:">
+  <meta name="keywords" content="blog,developer,personal">
+
+  <meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://ulttransformer.com/img/blogs.jpeg"/>
+
+<meta name="twitter:title" content="Chris&#39; Corner - March 2023"/>
+<meta name="twitter:description" content="Note: This is a copy of my env0 post.
+IntroductionThe development within the env0 platform is fantastic, one of the many reasons I love working here. The features come thick and fast and this is the motivation behind this monthly blog, to highlight the latest features and showcase Chris’ favorites.
+If you want to keep up to date with the features as they are released, follow the changelog.
+So far in 2023, we’ve released the following features:"/>
+
+  <meta property="og:title" content="Chris&#39; Corner - March 2023" />
+<meta property="og:description" content="Note: This is a copy of my env0 post.
+IntroductionThe development within the env0 platform is fantastic, one of the many reasons I love working here. The features come thick and fast and this is the motivation behind this monthly blog, to highlight the latest features and showcase Chris’ favorites.
+If you want to keep up to date with the features as they are released, follow the changelog.
+So far in 2023, we’ve released the following features:" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://ulttransformer.com/posts/env0/chris-corner-march-2023/" /><meta property="og:image" content="https://ulttransformer.com/img/blogs.jpeg"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-03-01T00:00:00+00:00" />
+<meta property="article:modified_time" content="2023-03-01T00:00:00+00:00" />
+
+  <link rel="stylesheet" href="/css/bootstrap.min.css"  crossorigin="anonymous">
+  
+  <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/all.min.css" rel="stylesheet" type="text/css">
+
+  <link rel="stylesheet" href="/sass/main.css">
+
+  <link rel="stylesheet" href="/zoomjs/zoom.min.css">
+
+  <script src=/js/lazysizes.min.js></script>
+
+  
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="shortcut icon" href="/favicon.png" type="image/x-icon">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/logo.svg" sizes="any" type="image/svg+xml" />
+
+
+</head>
+
+
+
+<body ontouchstart="">
+  <nav class="navbar navbar-default navbar-custom navbar-fixed-top ">
+  <div class="container-fluid">
+    
+    <div class="navbar-header page-scroll">
+      <button type="button" class="navbar-toggle">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://ulttransformer.com">UltTransformer</a>
+    </div>
+    
+    <div id="huxblog_navbar">
+      <div class="navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          
+          <li><a href="/" title="Home">Home</a></li>
+          
+          <li><a href="/posts/" title="Posts">Posts</a></li>
+          
+          <li><a href="/about/" title="About">About</a></li>
+          
+
+          <li class="search-icon">
+            <a href="javascript:void(0)">
+              <i class="fa fa-search"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    
+  </div>
+  
+</nav>
+<script>
+  
+  
+  
+  var $body = document.body;
+  var $toggle = document.querySelector(".navbar-toggle");
+  var $navbar = document.querySelector("#huxblog_navbar");
+  var $collapse = document.querySelector(".navbar-collapse");
+
+  var __HuxNav__ = {
+    close: function () {
+      $navbar.className = " ";
+      
+      setTimeout(function () {
+        
+        if ($navbar.className.indexOf("in") < 0) {
+          $collapse.style.height = "0px";
+        }
+      }, 400);
+    },
+    open: function () {
+      $collapse.style.height = "auto";
+      $navbar.className += " in";
+    },
+  };
+
+  
+  $toggle.addEventListener("click", function (e) {
+    if ($navbar.className.indexOf("in") > 0) {
+      __HuxNav__.close();
+    } else {
+      __HuxNav__.open();
+    }
+  });
+
+  
+
+  document.addEventListener("click", function (e) {
+    if (e.target == $toggle) return;
+    if (e.target.className == "icon-bar") return;
+    __HuxNav__.close();
+  });
+</script>
+  
+<div class="search-page">
+  <div class="search-icon-close-container">
+    <span class="search-icon-close">
+      <i class="fa fa-chevron-down"></i>
+    </span>
+  </div>
+  <div class="search-main container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <form></form>
+        <input type="text" id="search-input" placeholder="$ grep...">
+        </form>
+        <div id="search-results" class="mini-post-list"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  
+  
+
+
+<style type="text/css">
+  header.intro-header {
+    position: relative;
+    background-image: url('/img/blogs.jpeg');
+  }
+</style>
+
+<header class="intro-header ">
+
+  <div class="header-mask"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="post-heading">
+          <div class="tags">
+            
+            <a class="tag" href="/tags/env0/" title="env0">env0</a>
+            
+          </div>
+          <h1>Chris&#39; Corner - March 2023</h1>
+          <h2 class="subheading">env0</h2>
+          <span class="meta">
+            Posted by  Chris Noon 
+            on Wed, Mar 1, 2023
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+  
+
+
+<article>
+  <div class="container">
+    <div class="row">
+
+      
+      <div class="
+              col-lg-8 col-lg-offset-2
+              col-md-10 col-md-offset-1
+              post-container">
+        <blockquote>
+<p>Note: This is a copy of my <a href="https://www.env0.com/blog/chris-corner-march-2023" target="_blank">env0 post</a>.</p>
+</blockquote>
+<h3 id="introduction">Introduction<a class="anchorjs-link" href="#introduction"></a></h3><p>The development within the env0 platform is fantastic, one of the many reasons I love working here. The features come thick and fast and this is the motivation behind this monthly blog, to highlight the latest features and showcase Chris’ favorites.</p>
+<p>If you want to keep up to date with the features as they are released, follow the <a href="https://docs.env0.com/changelog" target="_blank">changelog</a>.</p>
+<p>So far in 2023, we’ve released the following features:</p>
+<ul>
+<li><a href="https://docs.env0.com/changelog/azure-devops-integration" target="_blank">Azure DevOps Integration</a> - Full integration with the Azure DevOps VCS.</li>
+<li><a href="https://docs.env0.com/changelog/plugins" target="_blank">Plugins</a> - Native plugin integration for open-source software such as OPA, TFlint, Checkov, etc.</li>
+<li><a href="https://docs.env0.com/changelog/module-registry-modules-from-path" target="_blank">Private Module Registry</a> - Folder-Based Modules - Folder-based module registry for easy and secure access.</li>
+<li><a href="https://docs.env0.com/changelog/project-level-custom-flow" target="_blank">Project Level Custom Workflows</a> - The ability to set governance and compliance checks at a project level.</li>
+<li><a href="https://docs.env0.com/changelog/log-forwarding-to-google-cloud-logging" target="_blank">Log Forwarding to Google Cloud Logging</a></li>
+<li><a href="https://docs.env0.com/changelog/workflow-settings-enhancement" target="_blank">Workflow Enhancements</a> - Variable segregation between environments within Workflows.</li>
+<li><a href="https://docs.env0.com/changelog/environment-locking" target="_blank">Environment Locking</a> - Admin ability to lock environments to stop updates or destroys.</li>
+<li><a href="https://docs.env0.com/changelog/remote-plans" target="_blank">Remote Plans</a> - Run a Terraform plan locally on your machine against the env0 application for speed of development.</li>
+<li><a href="https://docs.env0.com/changelog/deployment-comments" target="_blank">Deployment Comments</a> - Add comments to each environment to aid in collaboration.</li>
+<li><a href="https://docs.env0.com/changelog/custom-ttl-policy" target="_blank">Custom TTL Policy</a> - Now customize TTL timelines within an Organisation and Project.</li>
+<li><a href="https://docs.env0.com/changelog/new-integrations-plugins-and-sumo-logic" target="_blank">New Integrations</a> - Plugins and Sumo Logic</li>
+</ul>
+<p>This month&rsquo;s highlighted feature will be <a href="https://docs.env0.com/changelog/project-level-custom-flow" target="_blank">Project Level Custom Flows</a>.</p>
+<h3 id="whats-the-problem">What’s the problem?<a class="anchorjs-link" href="#whats-the-problem"></a></h3><p>env0 originally had the custom flow feature restricted to per environment. This meant any time you wanted multiple environments to run through plugin checks with agents such as OPA, TFlint, CheckOV, etc you would have to present the code in each environment folder.</p>
+<p>Not only is this time-consuming, but it means any updates to the plugin checks may not be pushed to all relevant environments creating logistical or security concerns.</p>
+<p>We listened to our customers and prioritized the highlighted feature to remove these pain points with Custom Flows defined for all environments within a Project.</p>
+<h3 id="how-does-env0-solve-the-problem">How does env0 solve the problem?<a class="anchorjs-link" href="#how-does-env0-solve-the-problem"></a></h3><p>We now have the ability to set plugin checks at the Project level, which then applies to all environments within that project. This can be extremely useful in several scenarios, a key one to mention is having an application project or sub-project. All application deployments will then be subjected to the relevant checks defined by the user and/or the business.</p>
+<p>The documentation to set up the project-level custom flows can be found here:</p>
+<p><a href="https://docs.env0.com/docs/project-level-custom-flow" target="_blank">https://docs.env0.com/docs/project-level-custom-flow</a></p>
+<p>It’s also relevant to mention that env0 has two methods of integrating third-party tools. Either writing a script that is consumed at the custom flow level or using our native <a href="https://docs.env0.com/docs/plugins" target="_blank">plugin feature</a>.</p>
+<h3 id="new-feature">New Feature<a class="anchorjs-link" href="#new-feature"></a></h3><p>This can be easily enabled by navigating to the Project Settings within the chosen Project. Select the POLICIES tab and press configure under the Custom Flow section.</p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="/img/env0/chris-corner-march-2023/project-settings.png" data-action="zoom" alt="Project Settings"  class="lazyload">
+  </a>
+  
+</figure></p>
+<p>Select the VCS, in this example, I’m using GitHub. Populate the Repository, Branch, and Custom Flow File Path. Take note that the path doesn’t end at a directory, but the specific .yml or .yaml file.</p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="/img/env0/chris-corner-march-2023/configuring-custom-flow.png" data-action="zoom" alt="Configure Custom Flow"  class="lazyload">
+  </a>
+  
+</figure></p>
+<p>Once you applied the configuration, ensure you enable the check box, Apply custom flow to all environments in the project.</p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="/img/env0/chris-corner-march-2023/custom-flow.png" data-action="zoom" alt="Custom Flow"  class="lazyload">
+  </a>
+  
+</figure></p>
+<p>This will make sure any new deployments in the Project will be subject to this check.</p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="/img/env0/chris-corner-march-2023/custom-flow-apply.png" data-action="zoom" alt="Custom Flow Apply"  class="lazyload">
+  </a>
+  
+</figure></p>
+<p>If you’re a little lost, don’t worry, follow along with the video below that integrates an OPA check into our Application Projects.</p>
+<p><a href="https://vimeo.com/804066385" target="_blank">https://vimeo.com/804066385</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span>Code
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>&lt;code&gt;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>version: 2
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>deploy:
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span> steps:
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>   terraformPlan:
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>     after:
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>       - name: Generate plan output
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>         run: terraform show -json .tf-plan &gt; tf-plan.json
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>       - name: Running OPA check
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>         use: https://github.com/env0/env0-opa-plugin
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>         inputs:
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span>           path: ${ENV0_ROOT_DIR}/integrations/opa/rego
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span>           flags: --input tf-plan.json --fail-defined --format=raw
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span>           query: data.terraform.validation.violations[msg]
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span>&lt;/code&gt;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span>‍```
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span><span>Thanks for reading! If you have any questions you can reach out to Chris on [LinkedIn](https://www.linkedin.com/in/chrisgrahamnoon/), or [schedule a demo](https://www.env0.com/demo-request) with the Sales Engineering Team.
+</span></span></code></pre></div>
+
+        <hr style="visibility: hidden;" />
+        <ul class="pager">
+          
+          <li class="previous">
+            <a href="/posts/env0/recommendations-for-migrating-from-terraform-cloud/" data-toggle="tooltip" data-placement="top" title="More Recommendations for Migrating from Terraform Cloud">
+              Previous<br>
+              <span>More Recommendations for Migrating from Terraform Cloud</span>
+            </a>
+          </li>
+          
+          
+          <li class="next">
+            <a href="/posts/env0/provider-registry/" data-toggle="tooltip" data-placement="top" title="Provider Registry">
+              Next<br>
+              <span>Provider Registry</span>
+            </a>
+          </li>
+          
+        </ul>
+        <hr style="visibility: hidden;" />
+
+        
+        
+
+
+
+
+
+
+      </div>
+
+      
+      
+      
+      
+      <div class="
+              col-lg-8 col-lg-offset-2
+              col-md-10 col-md-offset-1
+              sidebar-container">
+
+        
+        
+        <section>
+  
+  
+  <hr class="hidden-sm hidden-xs">
+  
+  <h5>FEATURED TAGS</h5>
+  <div class="tags">
+    
+    <a href="/tags/cilium/">Cilium</a>
+    
+    <a href="/tags/env0/">env0</a>
+    
+    <a href="/tags/nsx/">NSX</a>
+    
+    <a href="/tags/vcdx/">VCDX</a>
+    
+  </div>
+</section>
+
+        
+        
+
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+  
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        
+        <ul class="list-inline text-center">
+
+<li>
+  <a href="https://github.com/UltTransformer" target="_blank">
+    <span class="fa-stack fa-lg">
+      <i class="fa fa-circle fa-stack-2x"></i>
+      <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+    </span>
+  </a>
+</li>
+
+<li>
+  <a href="https://linkedin.com/in/chrisgrahamnoon" target="_blank">
+    <span class="fa-stack fa-lg">
+      <i class="fa fa-circle fa-stack-2x"></i>
+      <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+    </span>
+  </a>
+</li>
+
+<li>
+  <a href="https://twitter.com/UltTransformer" target="_blank">
+    <span class="fa-stack fa-lg">
+      <i class="fa fa-circle fa-stack-2x"></i>
+      <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+    </span>
+  </a>
+</li>
+
+
+<li>
+  <a href="/index.xml" target="_blank">
+    <span class="fa-stack fa-lg">
+      <i class="fa fa-circle fa-stack-2x"></i>
+      <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+    </span>
+  </a>
+</li></ul>
+
+        <p class="copyright text-muted">
+          Copyright &copy; UltTransformer 2023  
+          <br>
+          Powered by <a href="https://gohugo.io">Hugo</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src=/js/jquery.min.js></script>
+<script src=/js/bootstrap.min.js crossorigin="anonymous"></script>
+
+
+
+<script src="/js/hux-blog.min.c4ea77041cd3edbfc8b2622cd887a9a5d8760a4162d14489e36d2a3fa4c90172.js"></script>
+
+
+<script src=/js/simple-jekyll-search.min.js></script>
+
+
+<script src="/js/search.min.53bce5da475b4d362500e5ce5dddfa22e20e1b9018777411d2020b4b839c9310.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="/zoomjs/zoom.min.js"></script>
+
+</body>
+
+</html>

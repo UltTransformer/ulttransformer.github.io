@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  
+    
+  <title>More Recommendations for Migrating from Terraform Cloud | UltTransformer</title>
+  <meta name="author" content="Puppet">
+  <meta name="description" content="Note: This is a copy of my env0 post.
+In mid-2021, Tim Davis wrote a blog on migrating the state from TFC (Terraform Cloud) to another IaC management platform.
+It does a great job of highlighting how TFC and env0 function in terms of both runs and state, or at least it did. Since this original post, the env0 Platform evolution has been quick and with features and improvements coming out every week, it can be hard to keep up.">
+  <meta name="keywords" content="blog,developer,personal">
+
+  <meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://ulttransformer.com/img/blogs.jpeg"/>
+
+<meta name="twitter:title" content="More Recommendations for Migrating from Terraform Cloud"/>
+<meta name="twitter:description" content="Note: This is a copy of my env0 post.
+In mid-2021, Tim Davis wrote a blog on migrating the state from TFC (Terraform Cloud) to another IaC management platform.
+It does a great job of highlighting how TFC and env0 function in terms of both runs and state, or at least it did. Since this original post, the env0 Platform evolution has been quick and with features and improvements coming out every week, it can be hard to keep up."/>
+
+  <meta property="og:title" content="More Recommendations for Migrating from Terraform Cloud" />
+<meta property="og:description" content="Note: This is a copy of my env0 post.
+In mid-2021, Tim Davis wrote a blog on migrating the state from TFC (Terraform Cloud) to another IaC management platform.
+It does a great job of highlighting how TFC and env0 function in terms of both runs and state, or at least it did. Since this original post, the env0 Platform evolution has been quick and with features and improvements coming out every week, it can be hard to keep up." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://ulttransformer.com/posts/env0/recommendations-for-migrating-from-terraform-cloud/" /><meta property="og:image" content="https://ulttransformer.com/img/blogs.jpeg"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-11-01T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-11-01T00:00:00+00:00" />
+
+  <link rel="stylesheet" href="/css/bootstrap.min.css"  crossorigin="anonymous">
+  
+  <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/all.min.css" rel="stylesheet" type="text/css">
+
+  <link rel="stylesheet" href="/sass/main.css">
+
+  <link rel="stylesheet" href="/zoomjs/zoom.min.css">
+
+  <script src=/js/lazysizes.min.js></script>
+
+  
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="shortcut icon" href="/favicon.png" type="image/x-icon">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/logo.svg" sizes="any" type="image/svg+xml" />
+
+
+</head>
+
+
+
+<body ontouchstart="">
+  <nav class="navbar navbar-default navbar-custom navbar-fixed-top ">
+  <div class="container-fluid">
+    
+    <div class="navbar-header page-scroll">
+      <button type="button" class="navbar-toggle">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://ulttransformer.com">UltTransformer</a>
+    </div>
+    
+    <div id="huxblog_navbar">
+      <div class="navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          
+          <li><a href="/" title="Home">Home</a></li>
+          
+          <li><a href="/posts/" title="Posts">Posts</a></li>
+          
+          <li><a href="/about/" title="About">About</a></li>
+          
+
+          <li class="search-icon">
+            <a href="javascript:void(0)">
+              <i class="fa fa-search"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    
+  </div>
+  
+</nav>
+<script>
+  
+  
+  
+  var $body = document.body;
+  var $toggle = document.querySelector(".navbar-toggle");
+  var $navbar = document.querySelector("#huxblog_navbar");
+  var $collapse = document.querySelector(".navbar-collapse");
+
+  var __HuxNav__ = {
+    close: function () {
+      $navbar.className = " ";
+      
+      setTimeout(function () {
+        
+        if ($navbar.className.indexOf("in") < 0) {
+          $collapse.style.height = "0px";
+        }
+      }, 400);
+    },
+    open: function () {
+      $collapse.style.height = "auto";
+      $navbar.className += " in";
+    },
+  };
+
+  
+  $toggle.addEventListener("click", function (e) {
+    if ($navbar.className.indexOf("in") > 0) {
+      __HuxNav__.close();
+    } else {
+      __HuxNav__.open();
+    }
+  });
+
+  
+
+  document.addEventListener("click", function (e) {
+    if (e.target == $toggle) return;
+    if (e.target.className == "icon-bar") return;
+    __HuxNav__.close();
+  });
+</script>
+  
+<div class="search-page">
+  <div class="search-icon-close-container">
+    <span class="search-icon-close">
+      <i class="fa fa-chevron-down"></i>
+    </span>
+  </div>
+  <div class="search-main container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <form></form>
+        <input type="text" id="search-input" placeholder="$ grep...">
+        </form>
+        <div id="search-results" class="mini-post-list"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  
+  
+
+
+<style type="text/css">
+  header.intro-header {
+    position: relative;
+    background-image: url('/img/blogs.jpeg');
+  }
+</style>
+
+<header class="intro-header ">
+
+  <div class="header-mask"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="post-heading">
+          <div class="tags">
+            
+            <a class="tag" href="/tags/env0/" title="env0">env0</a>
+            
+          </div>
+          <h1>More Recommendations for Migrating from Terraform Cloud</h1>
+          <h2 class="subheading">.</h2>
+          <span class="meta">
+            Posted by  Chris Noon 
+            on Tue, Nov 1, 2022
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+  
+
+
+<article>
+  <div class="container">
+    <div class="row">
+
+      
+      <div class="
+              col-lg-8 col-lg-offset-2
+              col-md-10 col-md-offset-1
+              post-container">
+        <blockquote>
+<p>Note: This is a copy of my <a href="https://www.env0.com/blog/recommendations-for-migrating-from-terraform-cloud" target="_blank">env0 post</a>.</p>
+</blockquote>
+<p>In mid-2021, Tim Davis wrote <a href="https://www.env0.com/blog/migrate-from-terraform-cloud-to-env0" target="_blank">a blog</a> on migrating the state from <a href="https://www.env0.com/alternatives/terraform-cloud-alternative" target="_blank">TFC (Terraform Cloud)</a> to another IaC management platform.</p>
+<p>It does a great job of highlighting how TFC and env0 function in terms of both runs and state, or at least it did. Since this original post, the env0 Platform evolution has been quick and with features and improvements coming out every week, it can be hard to keep up. Let me elaborate…</p>
+<p>The original article mentions “env0 does not offer remote state backend capabilities…yet (Stay tuned)”. We do now! env0 recently added remote backend support that stores customer state files in a remote location (per customer, per environment). This now allows our customers to pick between three methods of managing state files.</p>
+<ul>
+<li>env0 can store the state files “locally” within the env0 infrastructure. Both our SaaS and hybrid deployment options run on Kubernetes, and PVs (persistent volumes) are created and used to store state per customer, per environment.</li>
+<li>env0 can store the state in any external backend as configured by the client in their code (such as S3).</li>
+<li>env0 can store state in a dedicated per customer, per environment env0 managed remote backend. This capability allows our customers to have the peace of mind their state is separated from the application all while not having to manage or pay for storage.</li>
+</ul>
+<p>The key takeaway here is that these three options allow you as the customer to make design
+decisions based on your desired solution.</p>
+<h3 id="migrating-your-remote-state">Migrating your remote state<a class="anchorjs-link" href="#migrating-your-remote-state"></a></h3><p>Now with these three options available to our users, we are able to seamlessly migrate both the runs and state to env0 and provide the same governance and compliance for the state.</p>
+<p>In these examples, we will assume you are migrating your run and state from TFC to env0.</p>
+<h4 id="tfc-remote-backend-to-env0-remote-backend">TFC remote backend to env0 remote backend<a class="anchorjs-link" href="#tfc-remote-backend-to-env0-remote-backend"></a></h4><p>This migration method can be somewhat challenging because you have to move the state via a proxy, typically a local machine or jump box/bastion host. It also requires a login to TFC and env0. The below procedure can be used to migrate TFC local state to the env0 local state.</p>
+<p>Login to TFC:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>terraform login
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>mkdir -p terraform.tfstate.d/tfc-migration
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>terraform state pull &gt; terraform.tfstate.d/tfc-migration/terraform.tfstate
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>mv .terraform/terraform.tfstate .terraform/terraform.tfstate.old
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span>cp terraform.tfstate.d/tfc-migration/terraform.tfstate .terraform/terraform.tfstate
+</span></span></code></pre></div><p>Remove the cloud block in the config (if configured)</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>terraform init
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>terraform plan
+</span></span></code></pre></div><p>No changes should be seen.</p>
+<p>Login to env0:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>terraform login backend.api.env0.com
+</span></span></code></pre></div><p>Add the env0 remote block: <a href="https://docs.env0.com/docs/state-migration" target="_blank">https://docs.env0.com/docs/state-migration</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>terraform init -migrate-state -force-copy
+</span></span></code></pre></div><p>Update the env0 template with the correct VCS configuration.</p>
+<p>We are working hard to have this scripted. Keep your eyes peeled.</p>
+<h3 id="existing-remote-state">Existing remote state<a class="anchorjs-link" href="#existing-remote-state"></a></h3><p>Possibly the easiest type of migration is when using TFC with a remote state such as s3.  This migrates the run logic while leaving the state untouched.</p>
+<p>The only part of the migration that can become troublesome is the replication of variables and environmental variables. To assist in the migration, we have <a href="https://github.com/env0/customer-tools/tree/main/migrations/tfc-to-env0-migration/s3-backed-state" target="_blank">created a script</a> that will pull the data from your TFC workspace and create an equivalent env0 workspace, including moving your variables from one to the other.</p>
+<h3 id="tfc-remote-state-to-env0-remote-state">TFC remote state to env0 remote state<a class="anchorjs-link" href="#tfc-remote-state-to-env0-remote-state"></a></h3><p>This method is identical to the “TFC remote state to env0 local state” with one additional step at the end of the procedure. Enable “Use env0 remote backend” in the environment settings and redeploy, moving your state from env0 local to env0 remote backend.</p>
+<p>‍<figure>
+  <a class="paragraph-image">
+    <img data-src="/img/env0/recommendations-for-migrating-from-terraform-cloud/remote-state.png" data-action="zoom" alt="Remote State"  class="lazyload">
+  </a>
+  
+</figure></p>
+<h3 id="final-thoughts">Final Thoughts<a class="anchorjs-link" href="#final-thoughts"></a></h3><p>These three migration methods allow you to migrate from TFC to env0 and have the state stored in any way that meets your business needs. We want to provide as much flexibility when moving over to env0 and we understand the state is an important part of the conversation.</p>
+<p>If you are looking for features around executing remote runs locally, then I suggest you check out another recent post. And here&rsquo;s a guide to managing <a href="https://www.env0.com/blog/terraform-remote-state-using-a-remote-backend" target="_blank">Terraform remote state using remote backend</a>.</p>
+<p>If you have any questions about state migration or env0 in general, please reach out to us and our team would be happy to help.</p>
+<p>To learn more about the advantages of migrating from Terraform Cloud to env0, check out our <a href="https://www.env0.com/alternatives/terraform-cloud-alternative" target="_blank">Terraform Cloud Alternative page</a>.</p>
+
+
+        <hr style="visibility: hidden;" />
+        <ul class="pager">
+          
+          <li class="previous">
+            <a href="/posts/env0/how-to-make-managing-multiple-terraform-environments-easier/" data-toggle="tooltip" data-placement="top" title="How to make managing multiple Terraform environments easier">
+              Previous<br>
+              <span>How to make managing multiple Terraform environments easier</span>
+            </a>
+          </li>
+          
+          
+          <li class="next">
+            <a href="/posts/env0/chris-corner-march-2023/" data-toggle="tooltip" data-placement="top" title="Chris&#39; Corner - March 2023">
+              Next<br>
+              <span>Chris&#39; Corner - March 2023</span>
+            </a>
+          </li>
+          
+        </ul>
+        <hr style="visibility: hidden;" />
+
+        
+        
+
+
+
+
+
+
+      </div>
+
+      
+      
+      
+      
+      <div class="
+              col-lg-8 col-lg-offset-2
+              col-md-10 col-md-offset-1
+              sidebar-container">
+
+        
+        
+        <section>
+  
+  
+  <hr class="hidden-sm hidden-xs">
+  
+  <h5>FEATURED TAGS</h5>
+  <div class="tags">
+    
+    <a href="/tags/cilium/">Cilium</a>
+    
+    <a href="/tags/env0/">env0</a>
+    
+    <a href="/tags/nsx/">NSX</a>
+    
+    <a href="/tags/vcdx/">VCDX</a>
+    
+  </div>
+</section>
+
+        
+        
+
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+  
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        
+        <ul class="list-inline text-center">
+
+<li>
+  <a href="https://github.com/UltTransformer" target="_blank">
+    <span class="fa-stack fa-lg">
+      <i class="fa fa-circle fa-stack-2x"></i>
+      <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+    </span>
+  </a>
+</li>
+
+<li>
+  <a href="https://linkedin.com/in/chrisgrahamnoon" target="_blank">
+    <span class="fa-stack fa-lg">
+      <i class="fa fa-circle fa-stack-2x"></i>
+      <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+    </span>
+  </a>
+</li>
+
+<li>
+  <a href="https://twitter.com/UltTransformer" target="_blank">
+    <span class="fa-stack fa-lg">
+      <i class="fa fa-circle fa-stack-2x"></i>
+      <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+    </span>
+  </a>
+</li>
+
+
+<li>
+  <a href="/index.xml" target="_blank">
+    <span class="fa-stack fa-lg">
+      <i class="fa fa-circle fa-stack-2x"></i>
+      <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+    </span>
+  </a>
+</li></ul>
+
+        <p class="copyright text-muted">
+          Copyright &copy; UltTransformer 2023  
+          <br>
+          Powered by <a href="https://gohugo.io">Hugo</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src=/js/jquery.min.js></script>
+<script src=/js/bootstrap.min.js crossorigin="anonymous"></script>
+
+
+
+<script src="/js/hux-blog.min.c4ea77041cd3edbfc8b2622cd887a9a5d8760a4162d14489e36d2a3fa4c90172.js"></script>
+
+
+<script src=/js/simple-jekyll-search.min.js></script>
+
+
+<script src="/js/search.min.53bce5da475b4d362500e5ce5dddfa22e20e1b9018777411d2020b4b839c9310.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="/zoomjs/zoom.min.js"></script>
+
+</body>
+
+</html>

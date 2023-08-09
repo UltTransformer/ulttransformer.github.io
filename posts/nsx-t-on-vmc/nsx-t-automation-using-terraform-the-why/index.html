@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  
+    
+  <title>NSX-T Automation using Terraform | UltTransformer</title>
+  <meta name="author" content="Puppet">
+  <meta name="description" content="Hi all, I hope you are all doing well during these trying times.
+For months, possibly even years, I’ve been convincing myself I’d dive into automation. What better time than one where I am forced into isolation with my laptop. In truth, I was jolted into action by a business requirement for automating the build of a number of environments. These environments had to be standardised and utilise many of the same configuration elements.">
+  <meta name="keywords" content="blog,developer,personal">
+
+  <meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://ulttransformer.com/img/blogs.jpeg"/>
+
+<meta name="twitter:title" content="NSX-T Automation using Terraform"/>
+<meta name="twitter:description" content="Hi all, I hope you are all doing well during these trying times.
+For months, possibly even years, I’ve been convincing myself I’d dive into automation. What better time than one where I am forced into isolation with my laptop. In truth, I was jolted into action by a business requirement for automating the build of a number of environments. These environments had to be standardised and utilise many of the same configuration elements."/>
+
+  <meta property="og:title" content="NSX-T Automation using Terraform" />
+<meta property="og:description" content="Hi all, I hope you are all doing well during these trying times.
+For months, possibly even years, I’ve been convincing myself I’d dive into automation. What better time than one where I am forced into isolation with my laptop. In truth, I was jolted into action by a business requirement for automating the build of a number of environments. These environments had to be standardised and utilise many of the same configuration elements." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://ulttransformer.com/posts/nsx-t-on-vmc/nsx-t-automation-using-terraform-the-why/" /><meta property="og:image" content="https://ulttransformer.com/img/blogs.jpeg"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-08-03T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-08-03T00:00:00+00:00" />
+
+  <link rel="stylesheet" href="/css/bootstrap.min.css"  crossorigin="anonymous">
+  
+  <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/all.min.css" rel="stylesheet" type="text/css">
+
+  <link rel="stylesheet" href="/sass/main.css">
+
+  <link rel="stylesheet" href="/zoomjs/zoom.min.css">
+
+  <script src=/js/lazysizes.min.js></script>
+
+  
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="shortcut icon" href="/favicon.png" type="image/x-icon">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/logo.svg" sizes="any" type="image/svg+xml" />
+
+
+</head>
+
+
+
+<body ontouchstart="">
+  <nav class="navbar navbar-default navbar-custom navbar-fixed-top ">
+  <div class="container-fluid">
+    
+    <div class="navbar-header page-scroll">
+      <button type="button" class="navbar-toggle">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://ulttransformer.com">UltTransformer</a>
+    </div>
+    
+    <div id="huxblog_navbar">
+      <div class="navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          
+          <li><a href="/" title="Home">Home</a></li>
+          
+          <li><a href="/posts/" title="Posts">Posts</a></li>
+          
+          <li><a href="/about/" title="About">About</a></li>
+          
+
+          <li class="search-icon">
+            <a href="javascript:void(0)">
+              <i class="fa fa-search"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    
+  </div>
+  
+</nav>
+<script>
+  
+  
+  
+  var $body = document.body;
+  var $toggle = document.querySelector(".navbar-toggle");
+  var $navbar = document.querySelector("#huxblog_navbar");
+  var $collapse = document.querySelector(".navbar-collapse");
+
+  var __HuxNav__ = {
+    close: function () {
+      $navbar.className = " ";
+      
+      setTimeout(function () {
+        
+        if ($navbar.className.indexOf("in") < 0) {
+          $collapse.style.height = "0px";
+        }
+      }, 400);
+    },
+    open: function () {
+      $collapse.style.height = "auto";
+      $navbar.className += " in";
+    },
+  };
+
+  
+  $toggle.addEventListener("click", function (e) {
+    if ($navbar.className.indexOf("in") > 0) {
+      __HuxNav__.close();
+    } else {
+      __HuxNav__.open();
+    }
+  });
+
+  
+
+  document.addEventListener("click", function (e) {
+    if (e.target == $toggle) return;
+    if (e.target.className == "icon-bar") return;
+    __HuxNav__.close();
+  });
+</script>
+  
+<div class="search-page">
+  <div class="search-icon-close-container">
+    <span class="search-icon-close">
+      <i class="fa fa-chevron-down"></i>
+    </span>
+  </div>
+  <div class="search-main container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <form></form>
+        <input type="text" id="search-input" placeholder="$ grep...">
+        </form>
+        <div id="search-results" class="mini-post-list"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  
+  
+
+
+<style type="text/css">
+  header.intro-header {
+    position: relative;
+    background-image: url('/img/blogs.jpeg');
+  }
+</style>
+
+<header class="intro-header ">
+
+  <div class="header-mask"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="post-heading">
+          <div class="tags">
+            
+            <a class="tag" href="/tags/nsx/" title="NSX">NSX</a>
+            
+          </div>
+          <h1>NSX-T Automation using Terraform</h1>
+          <h2 class="subheading">The why!</h2>
+          <span class="meta">
+            Posted by  Chris Noon 
+            on Mon, Aug 3, 2020
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+  
+
+
+<article>
+  <div class="container">
+    <div class="row">
+
+      
+      <div class="
+              col-lg-8 col-lg-offset-2
+              col-md-10 col-md-offset-1
+              post-container">
+        <p>Hi all, I hope you are all doing well during these trying times.</p>
+<p>For months, possibly even years, I’ve been convincing myself I’d dive into automation.  What better time than one where I am forced into isolation with my laptop.  In truth, I was jolted into action by a business requirement for automating the build of a number of environments.  These environments had to be standardised and utilise many of the same configuration elements.</p>
+<p>I’ve spent the better part of a month learning about Cloud (AWS and VMC on AWS) along with Network Automation, which brings us onto our first section…</p>
+<h3 id="why-terraform">Why Terraform?<a class="anchorjs-link" href="#why-terraform"></a></h3><p>I first began by googling ‘Network Automation Tools’ and reading a ton of articles.  Whittling down my options based on my requirements, I decided to talk to a number of Automation engineers. Asking them what they thought about Terraform and Ansible, my top 2 prospective tools.  I learnt a ton from both of these methods!</p>
+<p>If like me, you research the 2, you’ll find Terraform appears to be more of an Orchestrator and Ansible is more of a Configuration Management System. The way I differentiate between the 2 is Orchestration is about standing up the foundational infrastructure and the Configuration Management System is about keeping systems standardised (think webserver).</p>
+<p>There seems to be a fair amount of overlap between Terraform and Ansible, which I expected.  I decided learning both would only strengthen my understanding of Network Automation.  Allowing me to pick the best tool for the job in the future.</p>
+<blockquote>
+<p>Disclaimer: At this stage, I’ve only worked with Terraform.  I plan to take Ansible for a long drive in the coming weeks.</p>
+</blockquote>
+<p>I decided I would start with Terraform as one of my favourite bloggers <a href="https://nicovibert.com/" target="_blank">Nico</a> wrote a number of pieces around VMC and Terraform automation.  He also pointed me in <a href="http://www.gilles.cloud/" target="_blank">Gilles</a> direction, who also had a number of superb articles.  Nico and Gilles got me showing tangible results in a matter of hours/days. Spinning up VMC environments using Terraform (my main requirement).</p>
+<h3 id="my-experience-with-terraform">My experience with Terraform<a class="anchorjs-link" href="#my-experience-with-terraform"></a></h3><p>Over the past few weeks, I’ve enjoyed working with Terraform.   First using it to spin up VMC instances and then moving onto using it in native NSX-T environments.  While there are a number of use cases listed on terraform.io, I was most intrigued with Terraforms declarative native, the disposable environments and the scaling ability.</p>
+<p>If you decide to play with Terraform, you’ll find out your file structure gets built up by provider(s), modules and Terraform files (.tf).  I’ll cover this in more detail in a future blog.  The structure of the file system and the semi-readable code meant this was easy to pick up.</p>
+<p>Most importantly, did Terraform allow me to meet my requirements? In short, yes! I’m using the “vmc” and “nsxt” provider to automate the build of VMC environments. I’m able to use common configuration elements by using modules. This has allowed me to deploy different environments with the same IP sets/groups for example. Then using terraform files with variables for the custom elements. What has really helped during the proof of concept stage, is the ability to spin these environments up and down quickly and with ease (disposable environments).</p>
+<h3 id="closing">Closing<a class="anchorjs-link" href="#closing"></a></h3><p>The post was a lot fluffier than I originally intended.  I wanted to get into the meat of Terraform, but it was recommended I start the series with the why and then move into the how in my next post.</p>
+<p>Before I sign off, one last shout out to Rutger and the great post on Terraform and NSX-T.</p>
+
+
+        <hr style="visibility: hidden;" />
+        <ul class="pager">
+          
+          <li class="previous">
+            <a href="/posts/avi-networks-alb/avi-networks-base-configuration-via-api/" data-toggle="tooltip" data-placement="top" title="Avi Networks | NSX ALB">
+              Previous<br>
+              <span>Avi Networks | NSX ALB</span>
+            </a>
+          </li>
+          
+          
+          <li class="next">
+            <a href="/posts/nsx-t-on-vmc/nsx-t-automation-using-terraform-the-how-vmc/" data-toggle="tooltip" data-placement="top" title="NSX-T Automation using Terraform">
+              Next<br>
+              <span>NSX-T Automation using Terraform</span>
+            </a>
+          </li>
+          
+        </ul>
+        <hr style="visibility: hidden;" />
+
+        
+        
+
+
+
+
+
+
+      </div>
+
+      
+      
+      
+      
+      <div class="
+              col-lg-8 col-lg-offset-2
+              col-md-10 col-md-offset-1
+              sidebar-container">
+
+        
+        
+        <section>
+  
+  
+  <hr class="hidden-sm hidden-xs">
+  
+  <h5>FEATURED TAGS</h5>
+  <div class="tags">
+    
+    <a href="/tags/cilium/">Cilium</a>
+    
+    <a href="/tags/env0/">env0</a>
+    
+    <a href="/tags/nsx/">NSX</a>
+    
+    <a href="/tags/vcdx/">VCDX</a>
+    
+  </div>
+</section>
+
+        
+        
+
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+  
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        
+        <ul class="list-inline text-center">
+
+<li>
+  <a href="https://github.com/UltTransformer" target="_blank">
+    <span class="fa-stack fa-lg">
+      <i class="fa fa-circle fa-stack-2x"></i>
+      <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+    </span>
+  </a>
+</li>
+
+<li>
+  <a href="https://linkedin.com/in/chrisgrahamnoon" target="_blank">
+    <span class="fa-stack fa-lg">
+      <i class="fa fa-circle fa-stack-2x"></i>
+      <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+    </span>
+  </a>
+</li>
+
+<li>
+  <a href="https://twitter.com/UltTransformer" target="_blank">
+    <span class="fa-stack fa-lg">
+      <i class="fa fa-circle fa-stack-2x"></i>
+      <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+    </span>
+  </a>
+</li>
+
+
+<li>
+  <a href="/index.xml" target="_blank">
+    <span class="fa-stack fa-lg">
+      <i class="fa fa-circle fa-stack-2x"></i>
+      <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+    </span>
+  </a>
+</li></ul>
+
+        <p class="copyright text-muted">
+          Copyright &copy; UltTransformer 2023  
+          <br>
+          Powered by <a href="https://gohugo.io">Hugo</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src=/js/jquery.min.js></script>
+<script src=/js/bootstrap.min.js crossorigin="anonymous"></script>
+
+
+
+<script src="/js/hux-blog.min.c4ea77041cd3edbfc8b2622cd887a9a5d8760a4162d14489e36d2a3fa4c90172.js"></script>
+
+
+<script src=/js/simple-jekyll-search.min.js></script>
+
+
+<script src="/js/search.min.53bce5da475b4d362500e5ce5dddfa22e20e1b9018777411d2020b4b839c9310.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="/zoomjs/zoom.min.js"></script>
+
+</body>
+
+</html>
