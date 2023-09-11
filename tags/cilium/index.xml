@@ -6,7 +6,17 @@
     <description>Recent content in Cilium on UltTransformer</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 09 Aug 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://ulttransformer.com/tags/cilium/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 11 Sep 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://ulttransformer.com/tags/cilium/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>GKE Deep Dive by A Cloud Guru</title>
+      <link>https://ulttransformer.com/posts/cilium/gke-deep-dive/</link>
+      <pubDate>Mon, 11 Sep 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ulttransformer.com/posts/cilium/gke-deep-dive/</guid>
+      <description>After watching the GKE Deep Dive course provided by ACloudGuru/Pluralsight, I felt a little disappointed. While I never want to discourage people from publishing content as it helps us all learn, I felt the course should be (re)named to GKE Getting Started.
+The course has value, showing general GKE concepts and providing how-to videos, so if you are a GCP novice or a K8s novice, then this course is definitely worth checking out.</description>
+    </item>
+    
     <item>
       <title>Advanced Networking with Kubernetes on AWS by A Cloud Guru</title>
       <link>https://ulttransformer.com/posts/cilium/advanced-networking-with-kubernetes-on-aws-by-a-cloud-guru/</link>
